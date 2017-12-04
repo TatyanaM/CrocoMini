@@ -1,0 +1,3 @@
+target 'Ya_croco' do
+ pod 'Masonry'
+end

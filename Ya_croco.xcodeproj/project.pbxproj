@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
+		091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6281FD567AB00B789BD /* Main.storyboard */; };
+		091CA62D1FD567AB00B789BD /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */; };
+		091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CA62E1FD567AB00B789BD /* Assets.xcassets */; };
+		091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */; };
+		091CA6351FD567AB00B789BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
+		091CA63F1FD567AC00B789BD /* Ya_crocoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */; };
+		091CA6581FD569B200B789BD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6531FD569B200B789BD /* MainViewController.m */; };
+		091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
+		091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
+		091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
+		091CA6671FD584A900B789BD /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */; };
+		091CA6681FD584A900B789BD /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6651FD584A900B789BD /* Item+CoreDataClass.m */; };
+		76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		091CA63B1FD567AC00B789BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091CA6171FD567AB00B789BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 091CA61E1FD567AB00B789BD;
+			remoteInfo = Ya_croco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		091CA61F1FD567AB00B789BD /* Ya_croco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ya_croco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		091CA6221FD567AB00B789BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		091CA6231FD567AB00B789BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		091CA6291FD567AB00B789BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ya_croco.xcdatamodel; sourceTree = "<group>"; };
+		091CA62E1FD567AB00B789BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		091CA6311FD567AB00B789BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		091CA6331FD567AB00B789BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091CA6341FD567AB00B789BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ya_crocoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ya_crocoTests.m; sourceTree = "<group>"; };
+		091CA6401FD567AC00B789BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091CA64F1FD5686D00B789BD /* Ya_croco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ya_croco-Bridging-Header.h"; sourceTree = "<group>"; };
+		091CA6531FD569B200B789BD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
+		091CA6541FD569B200B789BD /* PurchasesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchasesViewController.swift; path = Controllers/PurchasesViewController.swift; sourceTree = "<group>"; };
+		091CA6551FD569B200B789BD /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Controllers/SearchViewController.h; sourceTree = "<group>"; };
+		091CA6561FD569B200B789BD /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Controllers/SearchViewController.m; sourceTree = "<group>"; };
+		091CA6571FD569B200B789BD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Controllers/MainViewController.h; sourceTree = "<group>"; };
+		091CA65D1FD56A2B00B789BD /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		091CA65E1FD56A2B00B789BD /* LoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		091CA6611FD56D8200B789BD /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
+		091CA6621FD570FB00B789BD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		091CA6631FD584A900B789BD /* Item+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataClass.h"; path = "Database/Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "Database/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		091CA6651FD584A900B789BD /* Item+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataClass.m"; path = "Database/Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		091CA6661FD584A900B789BD /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataProperties.h"; path = "Database/Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.debug.xcconfig"; sourceTree = "<group>"; };
+		67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.release.xcconfig"; sourceTree = "<group>"; };
+		E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ya_croco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		091CA61C1FD567AB00B789BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091CA6371FD567AC00B789BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		091CA6161FD567AB00B789BD = {
+			isa = PBXGroup;
+			children = (
+				091CA6211FD567AB00B789BD /* Ya_croco */,
+				091CA63D1FD567AC00B789BD /* Ya_crocoTests */,
+				091CA6201FD567AB00B789BD /* Products */,
+				BFC0025BA5B521A5C4E5D8EA /* Pods */,
+				E3B596DAA9B96027B4FEA362 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		091CA6201FD567AB00B789BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				091CA61F1FD567AB00B789BD /* Ya_croco.app */,
+				091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		091CA6211FD567AB00B789BD /* Ya_croco */ = {
+			isa = PBXGroup;
+			children = (
+				091CA6521FD5698F00B789BD /* Controllers */,
+				091CA6601FD56A3000B789BD /* Views */,
+				091CA65C1FD569D900B789BD /* Application */,
+				091CA65B1FD569BD00B789BD /* Database */,
+			);
+			path = Ya_croco;
+			sourceTree = "<group>";
+		};
+		091CA63D1FD567AC00B789BD /* Ya_crocoTests */ = {
+			isa = PBXGroup;
+			children = (
+				091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */,
+				091CA6401FD567AC00B789BD /* Info.plist */,
+			);
+			path = Ya_crocoTests;
+			sourceTree = "<group>";
+		};
+		091CA6521FD5698F00B789BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				091CA6571FD569B200B789BD /* MainViewController.h */,
+				091CA6531FD569B200B789BD /* MainViewController.m */,
+				091CA6551FD569B200B789BD /* SearchViewController.h */,
+				091CA6561FD569B200B789BD /* SearchViewController.m */,
+				091CA64F1FD5686D00B789BD /* Ya_croco-Bridging-Header.h */,
+				091CA6541FD569B200B789BD /* PurchasesViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		091CA65B1FD569BD00B789BD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				091CA6631FD584A900B789BD /* Item+CoreDataClass.h */,
+				091CA6651FD584A900B789BD /* Item+CoreDataClass.m */,
+				091CA6661FD584A900B789BD /* Item+CoreDataProperties.h */,
+				091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */,
+				091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		091CA65C1FD569D900B789BD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				091CA6221FD567AB00B789BD /* AppDelegate.h */,
+				091CA6231FD567AB00B789BD /* AppDelegate.m */,
+				091CA6281FD567AB00B789BD /* Main.storyboard */,
+				091CA62E1FD567AB00B789BD /* Assets.xcassets */,
+				091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */,
+				091CA6331FD567AB00B789BD /* Info.plist */,
+				091CA6341FD567AB00B789BD /* main.m */,
+				091CA6611FD56D8200B789BD /* Prefix.h */,
+				091CA6621FD570FB00B789BD /* Constants.h */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		091CA6601FD56A3000B789BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				091CA65D1FD56A2B00B789BD /* LoadingView.h */,
+				091CA65E1FD56A2B00B789BD /* LoadingView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BFC0025BA5B521A5C4E5D8EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */,
+				67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3B596DAA9B96027B4FEA362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		091CA61E1FD567AB00B789BD /* Ya_croco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091CA6431FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_croco" */;
+			buildPhases = (
+				B8D432794138DF372538468D /* [CP] Check Pods Manifest.lock */,
+				091CA61B1FD567AB00B789BD /* Sources */,
+				091CA61C1FD567AB00B789BD /* Frameworks */,
+				091CA61D1FD567AB00B789BD /* Resources */,
+				EC986405D6D455675F9BC402 /* [CP] Embed Pods Frameworks */,
+				EE4261BA1E8DC9B0459ABA49 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ya_croco;
+			productName = Ya_croco;
+			productReference = 091CA61F1FD567AB00B789BD /* Ya_croco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		091CA6391FD567AC00B789BD /* Ya_crocoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091CA6461FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_crocoTests" */;
+			buildPhases = (
+				091CA6361FD567AC00B789BD /* Sources */,
+				091CA6371FD567AC00B789BD /* Frameworks */,
+				091CA6381FD567AC00B789BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				091CA63C1FD567AC00B789BD /* PBXTargetDependency */,
+			);
+			name = Ya_crocoTests;
+			productName = Ya_crocoTests;
+			productReference = 091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		091CA6171FD567AB00B789BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Tatiana Mudryak";
+				TargetAttributes = {
+					091CA61E1FD567AB00B789BD = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					091CA6391FD567AC00B789BD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 091CA61E1FD567AB00B789BD;
+					};
+				};
+			};
+			buildConfigurationList = 091CA61A1FD567AB00B789BD /* Build configuration list for PBXProject "Ya_croco" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 091CA6161FD567AB00B789BD;
+			productRefGroup = 091CA6201FD567AB00B789BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				091CA61E1FD567AB00B789BD /* Ya_croco */,
+				091CA6391FD567AC00B789BD /* Ya_crocoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		091CA61D1FD567AB00B789BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */,
+				091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */,
+				091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091CA6381FD567AC00B789BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8D432794138DF372538468D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ya_croco-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC986405D6D455675F9BC402 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4261BA1E8DC9B0459ABA49 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		091CA61B1FD567AB00B789BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */,
+				091CA6351FD567AB00B789BD /* main.m in Sources */,
+				091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */,
+				091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */,
+				091CA62D1FD567AB00B789BD /* Ya_croco.xcdatamodeld in Sources */,
+				091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */,
+				091CA6671FD584A900B789BD /* Item+CoreDataProperties.m in Sources */,
+				091CA6681FD584A900B789BD /* Item+CoreDataClass.m in Sources */,
+				091CA6581FD569B200B789BD /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091CA6361FD567AC00B789BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091CA63F1FD567AC00B789BD /* Ya_crocoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		091CA63C1FD567AC00B789BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 091CA61E1FD567AB00B789BD /* Ya_croco */;
+			targetProxy = 091CA63B1FD567AC00B789BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		091CA6281FD567AB00B789BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				091CA6291FD567AB00B789BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				091CA6311FD567AB00B789BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		091CA6411FD567AC00B789BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		091CA6421FD567AC00B789BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		091CA6441FD567AC00B789BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BQSXV7Y63D;
+				GCC_PREFIX_HEADER = Ya_croco/Prefix.h;
+				INFOPLIST_FILE = Ya_croco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-croco";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ya_croco/Ya_croco-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		091CA6451FD567AC00B789BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BQSXV7Y63D;
+				GCC_PREFIX_HEADER = Ya_croco/Prefix.h;
+				INFOPLIST_FILE = Ya_croco/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-croco";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ya_croco/Ya_croco-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		091CA6471FD567AC00B789BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Ya_crocoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-crocoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya_croco.app/Ya_croco";
+			};
+			name = Debug;
+		};
+		091CA6481FD567AC00B789BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Ya_crocoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-crocoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya_croco.app/Ya_croco";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		091CA61A1FD567AB00B789BD /* Build configuration list for PBXProject "Ya_croco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091CA6411FD567AC00B789BD /* Debug */,
+				091CA6421FD567AC00B789BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091CA6431FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_croco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091CA6441FD567AC00B789BD /* Debug */,
+				091CA6451FD567AC00B789BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091CA6461FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_crocoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091CA6471FD567AC00B789BD /* Debug */,
+				091CA6481FD567AC00B789BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */,
+			);
+			currentVersion = 091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */;
+			path = Ya_croco.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 091CA6171FD567AB00B789BD /* Project object */;
+}
