@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
 		091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6281FD567AB00B789BD /* Main.storyboard */; };
-		091CA62D1FD567AB00B789BD /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */; };
 		091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CA62E1FD567AB00B789BD /* Assets.xcassets */; };
 		091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */; };
 		091CA6351FD567AB00B789BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
@@ -18,8 +17,11 @@
 		091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
 		091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
 		091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
-		091CA6671FD584A900B789BD /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */; };
-		091CA6681FD584A900B789BD /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6651FD584A900B789BD /* Item+CoreDataClass.m */; };
+		091CA66B1FD594FF00B789BD /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */; };
+		091CA66E1FD5957000B789BD /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA66D1FD5957000B789BD /* NetworkAPI.m */; };
+		091CA6721FD596DD00B789BD /* NetworkAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */; };
+		091CA6751FD59DB600B789BD /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */; };
+		091CA6781FD5A44E00B789BD /* BaseLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */; };
 		76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +40,6 @@
 		091CA6221FD567AB00B789BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		091CA6231FD567AB00B789BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		091CA6291FD567AB00B789BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ya_croco.xcdatamodel; sourceTree = "<group>"; };
 		091CA62E1FD567AB00B789BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091CA6311FD567AB00B789BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091CA6331FD567AB00B789BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,10 +57,15 @@
 		091CA65E1FD56A2B00B789BD /* LoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		091CA6611FD56D8200B789BD /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		091CA6621FD570FB00B789BD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		091CA6631FD584A900B789BD /* Item+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataClass.h"; path = "Database/Item+CoreDataClass.h"; sourceTree = "<group>"; };
-		091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataProperties.m"; path = "Database/Item+CoreDataProperties.m"; sourceTree = "<group>"; };
-		091CA6651FD584A900B789BD /* Item+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Item+CoreDataClass.m"; path = "Database/Item+CoreDataClass.m"; sourceTree = "<group>"; };
-		091CA6661FD584A900B789BD /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Item+CoreDataProperties.h"; path = "Database/Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		091CA66A1FD594FF00B789BD /* Ya_croco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ya_croco.xcdatamodel; sourceTree = "<group>"; };
+		091CA66C1FD5957000B789BD /* NetworkAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkAPI.h; sourceTree = "<group>"; };
+		091CA66D1FD5957000B789BD /* NetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkAPI.m; sourceTree = "<group>"; };
+		091CA6701FD596DD00B789BD /* NetworkAPIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkAPIWrapper.h; path = Network/NetworkAPIWrapper.h; sourceTree = "<group>"; };
+		091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkAPIWrapper.m; path = Network/NetworkAPIWrapper.m; sourceTree = "<group>"; };
+		091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsLoadingOperation.h; path = Network/ItemsLoadingOperation.h; sourceTree = "<group>"; };
+		091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsLoadingOperation.m; path = Network/ItemsLoadingOperation.m; sourceTree = "<group>"; };
+		091CA6761FD5A44E00B789BD /* BaseLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseLoadingOperation.h; path = Network/BaseLoadingOperation.h; sourceTree = "<group>"; };
+		091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseLoadingOperation.m; path = Network/BaseLoadingOperation.m; sourceTree = "<group>"; };
 		48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.debug.xcconfig"; sourceTree = "<group>"; };
 		67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.release.xcconfig"; sourceTree = "<group>"; };
 		E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ya_croco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,8 +115,9 @@
 			children = (
 				091CA6521FD5698F00B789BD /* Controllers */,
 				091CA6601FD56A3000B789BD /* Views */,
-				091CA65C1FD569D900B789BD /* Application */,
 				091CA65B1FD569BD00B789BD /* Database */,
+				091CA66F1FD5957300B789BD /* Network */,
+				091CA65C1FD569D900B789BD /* Application */,
 			);
 			path = Ya_croco;
 			sourceTree = "<group>";
@@ -140,11 +147,7 @@
 		091CA65B1FD569BD00B789BD /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				091CA6631FD584A900B789BD /* Item+CoreDataClass.h */,
-				091CA6651FD584A900B789BD /* Item+CoreDataClass.m */,
-				091CA6661FD584A900B789BD /* Item+CoreDataProperties.h */,
-				091CA6641FD584A900B789BD /* Item+CoreDataProperties.m */,
-				091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */,
+				091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -172,6 +175,21 @@
 				091CA65E1FD56A2B00B789BD /* LoadingView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		091CA66F1FD5957300B789BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				091CA6701FD596DD00B789BD /* NetworkAPIWrapper.h */,
+				091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */,
+				091CA66C1FD5957000B789BD /* NetworkAPI.h */,
+				091CA66D1FD5957000B789BD /* NetworkAPI.m */,
+				091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */,
+				091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */,
+				091CA6761FD5A44E00B789BD /* BaseLoadingOperation.h */,
+				091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		BFC0025BA5B521A5C4E5D8EA /* Pods */ = {
@@ -349,14 +367,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */,
+				091CA66E1FD5957000B789BD /* NetworkAPI.m in Sources */,
 				091CA6351FD567AB00B789BD /* main.m in Sources */,
 				091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */,
 				091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */,
-				091CA62D1FD567AB00B789BD /* Ya_croco.xcdatamodeld in Sources */,
 				091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */,
-				091CA6671FD584A900B789BD /* Item+CoreDataProperties.m in Sources */,
-				091CA6681FD584A900B789BD /* Item+CoreDataClass.m in Sources */,
+				091CA66B1FD594FF00B789BD /* Ya_croco.xcdatamodeld in Sources */,
+				091CA6721FD596DD00B789BD /* NetworkAPIWrapper.m in Sources */,
 				091CA6581FD569B200B789BD /* MainViewController.m in Sources */,
+				091CA6751FD59DB600B789BD /* ItemsLoadingOperation.m in Sources */,
+				091CA6781FD5A44E00B789BD /* BaseLoadingOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,13 +631,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		091CA62B1FD567AB00B789BD /* Ya_croco.xcdatamodeld */ = {
+		091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */,
+				091CA66A1FD594FF00B789BD /* Ya_croco.xcdatamodel */,
 			);
-			currentVersion = 091CA62C1FD567AB00B789BD /* Ya_croco.xcdatamodel */;
-			path = Ya_croco.xcdatamodeld;
+			currentVersion = 091CA66A1FD594FF00B789BD /* Ya_croco.xcdatamodel */;
+			name = Ya_croco.xcdatamodeld;
+			path = Database/Ya_croco.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

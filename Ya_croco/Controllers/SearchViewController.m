@@ -7,6 +7,7 @@
 //
 
 #import "SearchViewController.h"
+#import "ItemsLoadingOperation.h"
 
 @interface SearchViewController ()
 
@@ -23,8 +24,7 @@
 
 	// adjust UI
 	[self addTableView];
-	self.loadingView = [LoadingView loadingViewWithMessage:@"Загружаю данные..."];
-	[self.view addSubview:self.loadingView];
+	[self addLoadingView];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -32,7 +32,7 @@
 	[super viewWillAppear:animated];
 
 	// load data
-	[self loadingView];
+	[self loadItems];
 
 	// update view constraints
 	[self.view setNeedsUpdateConstraints];
@@ -46,7 +46,9 @@
 - (void)loadItems
 {
 	[self.view bringSubviewToFront:self.loadingView];
-	
+	ItemsLoadingOperation *op = [ItemsLoadingOperation new];
+	NSOperationQueue *q = [NSOperationQueue new];
+	[q addOperation:op];
 }
 
 
@@ -59,6 +61,11 @@
 	[self.view addSubview:self.tableView];
 }
 
+- (void)addLoadingView
+{
+	self.loadingView = [LoadingView loadingViewWithMessage:@"Загружаю данные..."];
+	[self.view addSubview:self.loadingView];
+}
 
 #pragma mark - Constraints
 
