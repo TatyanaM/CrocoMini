@@ -10,6 +10,17 @@
 
 NSString *const ItemCellIdentifier = @"ItemCellIdentifier";
 
+@interface ItemCell ()
+
+@property (nonatomic, strong) UILabel *descriptionLabel;
+@property (nonatomic, strong) UILabel *retailerLabel;
+@property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) UILabel *discountLabel;
+@property (nonatomic, strong) UIImageView *itemImageView;
+@property (nonatomic, strong) UIButton *cartButton;
+
+@end
+
 @implementation ItemCell
 
 - (void)awakeFromNib
@@ -20,6 +31,12 @@ NSString *const ItemCellIdentifier = @"ItemCellIdentifier";
 -(void)configureCell
 {
 	self.textLabel.text = self.item.itemDescription;
+}
+
+-(void)updateConstraints
+{
+	
+	[super updateConstraints];
 }
 
 @end
