@@ -10,8 +10,6 @@
 
 @interface MainViewController () <UITabBarControllerDelegate>
 
-
-
 @end
 
 @implementation MainViewController
@@ -19,6 +17,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.delegate = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	UIViewController *initViewContoller = self.selectedViewController;
+	if (initViewContoller)
+	{
+		self.navigationItem.title = initViewContoller.title;
+	}
 
 }
 
@@ -28,6 +37,11 @@
 
 }
 
+#pragma mark - UITabBarControllerDelegate
 
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+	self.navigationItem.title = viewController.title;
+}
 
 @end

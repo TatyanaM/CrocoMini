@@ -8,12 +8,17 @@
 
 import UIKit
 
+
+
 class PurchasesViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	public let PurchasesViewControllerTitle = "Список продуктов"
 
-        // Do any additional setup after loading the view.
+    override func viewDidLoad()
+	{
+        super.viewDidLoad()
+		self.title = PurchasesViewControllerTitle
+
     }
 
     override func didReceiveMemoryWarning() {

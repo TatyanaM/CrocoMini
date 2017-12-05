@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^ItemCompletionHandler)(id items, NSError *error);
+typedef void (^ResponseCompletionHandler)(id item, NSError *error);
 
 @interface NetworkAPI : NSObject
 
 - (instancetype)initWithRequest:(NSURLRequest *)request;
-- (NSArray *)startLoadingWithResponce:(NSURLResponse **)response error:(NSError **)error;
 
+- (NSArray *)startLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler;
 
 @end

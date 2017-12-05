@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "SearchViewController.h"
 #import "Ya_croco-Swift.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 NSString *const SearchViewControllerTabBatTitle = @"Поиск";
 NSString *const PurchasesViewControllerTabBatTitle = @"Список покупок";
@@ -23,6 +24,9 @@ NSString *const PurchasesViewControllerTabBatTitle = @"Список покупо
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	//setup database
+	[MagicalRecord setupCoreDataStack];
+
 	// main tab-bar controller
 	MainViewController *mainViewController = [MainViewController new];
 	mainViewController.view.backgroundColor = [UIColor whiteColor];

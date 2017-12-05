@@ -7,33 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
 		091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6281FD567AB00B789BD /* Main.storyboard */; };
 		091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CA62E1FD567AB00B789BD /* Assets.xcassets */; };
 		091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */; };
-		091CA6351FD567AB00B789BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
-		091CA63F1FD567AC00B789BD /* Ya_crocoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */; };
-		091CA6581FD569B200B789BD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6531FD569B200B789BD /* MainViewController.m */; };
-		091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
-		091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
-		091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
-		091CA66B1FD594FF00B789BD /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */; };
-		091CA66E1FD5957000B789BD /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA66D1FD5957000B789BD /* NetworkAPI.m */; };
-		091CA6721FD596DD00B789BD /* NetworkAPIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */; };
-		091CA6751FD59DB600B789BD /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */; };
-		091CA6781FD5A44E00B789BD /* BaseLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */; };
+		09ECAE251FD6B29300CA920A /* SearchItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA67D1FD696B400B789BD /* SearchItemManager.m */; };
+		09ECAE261FD6B29300CA920A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6531FD569B200B789BD /* MainViewController.m */; };
+		09ECAE271FD6B29300CA920A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
+		09ECAE281FD6B29300CA920A /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
+		09ECAE291FD6B29300CA920A /* ItemsSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6811FD69AF000B789BD /* ItemsSearchBar.m */; };
+		09ECAE2C1FD6B29300CA920A /* ItemStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE1D1FD6B23A00CA920A /* ItemStoreManager.m */; };
+		09ECAE2D1FD6B29300CA920A /* LoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6711FD596DD00B789BD /* LoadingManager.m */; };
+		09ECAE2E1FD6B29300CA920A /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA66D1FD5957000B789BD /* NetworkAPI.m */; };
+		09ECAE2F1FD6B29300CA920A /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */; };
+		09ECAE301FD6B29300CA920A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
+		09ECAE311FD6B29300CA920A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
+		09ECAE331FD6B2A500CA920A /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
+		09ECAE381FD6CAAC00CA920A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE371FD6CAAC00CA920A /* Item.m */; };
+		09ECAE3B1FD6D22800CA920A /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3A1FD6D22800CA920A /* ItemCell.m */; };
+		09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */; };
 		76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		091CA63B1FD567AC00B789BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 091CA6171FD567AB00B789BD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 091CA61E1FD567AB00B789BD;
-			remoteInfo = Ya_croco;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		091CA61F1FD567AB00B789BD /* Ya_croco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ya_croco.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,9 +37,6 @@
 		091CA6311FD567AB00B789BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091CA6331FD567AB00B789BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091CA6341FD567AB00B789BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ya_crocoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ya_crocoTests.m; sourceTree = "<group>"; };
-		091CA6401FD567AC00B789BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091CA64F1FD5686D00B789BD /* Ya_croco-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ya_croco-Bridging-Header.h"; sourceTree = "<group>"; };
 		091CA6531FD569B200B789BD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Controllers/MainViewController.m; sourceTree = "<group>"; };
 		091CA6541FD569B200B789BD /* PurchasesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchasesViewController.swift; path = Controllers/PurchasesViewController.swift; sourceTree = "<group>"; };
@@ -60,12 +50,22 @@
 		091CA66A1FD594FF00B789BD /* Ya_croco.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ya_croco.xcdatamodel; sourceTree = "<group>"; };
 		091CA66C1FD5957000B789BD /* NetworkAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkAPI.h; sourceTree = "<group>"; };
 		091CA66D1FD5957000B789BD /* NetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkAPI.m; sourceTree = "<group>"; };
-		091CA6701FD596DD00B789BD /* NetworkAPIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkAPIWrapper.h; path = Network/NetworkAPIWrapper.h; sourceTree = "<group>"; };
-		091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkAPIWrapper.m; path = Network/NetworkAPIWrapper.m; sourceTree = "<group>"; };
+		091CA6701FD596DD00B789BD /* LoadingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoadingManager.h; path = Network/LoadingManager.h; sourceTree = "<group>"; };
+		091CA6711FD596DD00B789BD /* LoadingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoadingManager.m; path = Network/LoadingManager.m; sourceTree = "<group>"; };
 		091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsLoadingOperation.h; path = Network/ItemsLoadingOperation.h; sourceTree = "<group>"; };
 		091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsLoadingOperation.m; path = Network/ItemsLoadingOperation.m; sourceTree = "<group>"; };
-		091CA6761FD5A44E00B789BD /* BaseLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseLoadingOperation.h; path = Network/BaseLoadingOperation.h; sourceTree = "<group>"; };
-		091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseLoadingOperation.m; path = Network/BaseLoadingOperation.m; sourceTree = "<group>"; };
+		091CA67C1FD696B400B789BD /* SearchItemManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchItemManager.h; sourceTree = "<group>"; };
+		091CA67D1FD696B400B789BD /* SearchItemManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchItemManager.m; sourceTree = "<group>"; };
+		091CA6801FD69AF000B789BD /* ItemsSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsSearchBar.h; path = Views/ItemsSearchBar.h; sourceTree = "<group>"; };
+		091CA6811FD69AF000B789BD /* ItemsSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsSearchBar.m; path = Views/ItemsSearchBar.m; sourceTree = "<group>"; };
+		09ECAE1C1FD6B23A00CA920A /* ItemStoreManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemStoreManager.h; path = Classes/ItemStoreManager.h; sourceTree = "<group>"; };
+		09ECAE1D1FD6B23A00CA920A /* ItemStoreManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemStoreManager.m; path = Classes/ItemStoreManager.m; sourceTree = "<group>"; };
+		09ECAE361FD6CAAC00CA920A /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Model/Item.h; sourceTree = "<group>"; };
+		09ECAE371FD6CAAC00CA920A /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Model/Item.m; sourceTree = "<group>"; };
+		09ECAE391FD6D22800CA920A /* ItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = Views/ItemCell.h; sourceTree = "<group>"; };
+		09ECAE3A1FD6D22800CA920A /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = Views/ItemCell.m; sourceTree = "<group>"; };
+		09ECAE3E1FD6D47300CA920A /* ItemsTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsTableViewDataSource.h; path = Classes/ItemsTableViewDataSource.h; sourceTree = "<group>"; };
+		09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsTableViewDataSource.m; path = Classes/ItemsTableViewDataSource.m; sourceTree = "<group>"; };
 		48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.debug.xcconfig"; sourceTree = "<group>"; };
 		67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.release.xcconfig"; sourceTree = "<group>"; };
 		E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ya_croco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,13 +80,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		091CA6371FD567AC00B789BD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				091CA6211FD567AB00B789BD /* Ya_croco */,
-				091CA63D1FD567AC00B789BD /* Ya_crocoTests */,
 				091CA6201FD567AB00B789BD /* Products */,
 				BFC0025BA5B521A5C4E5D8EA /* Pods */,
 				E3B596DAA9B96027B4FEA362 /* Frameworks */,
@@ -105,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				091CA61F1FD567AB00B789BD /* Ya_croco.app */,
-				091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,22 +104,15 @@
 		091CA6211FD567AB00B789BD /* Ya_croco */ = {
 			isa = PBXGroup;
 			children = (
+				091CA67F1FD696B800B789BD /* Managers */,
 				091CA6521FD5698F00B789BD /* Controllers */,
+				09ECAE3D1FD6D35600CA920A /* Tableview datasource&delegate */,
 				091CA6601FD56A3000B789BD /* Views */,
 				091CA65B1FD569BD00B789BD /* Database */,
 				091CA66F1FD5957300B789BD /* Network */,
 				091CA65C1FD569D900B789BD /* Application */,
 			);
 			path = Ya_croco;
-			sourceTree = "<group>";
-		};
-		091CA63D1FD567AC00B789BD /* Ya_crocoTests */ = {
-			isa = PBXGroup;
-			children = (
-				091CA63E1FD567AC00B789BD /* Ya_crocoTests.m */,
-				091CA6401FD567AC00B789BD /* Info.plist */,
-			);
-			path = Ya_crocoTests;
 			sourceTree = "<group>";
 		};
 		091CA6521FD5698F00B789BD /* Controllers */ = {
@@ -148,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */,
+				09ECAE361FD6CAAC00CA920A /* Item.h */,
+				09ECAE371FD6CAAC00CA920A /* Item.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -173,6 +159,10 @@
 			children = (
 				091CA65D1FD56A2B00B789BD /* LoadingView.h */,
 				091CA65E1FD56A2B00B789BD /* LoadingView.m */,
+				091CA6801FD69AF000B789BD /* ItemsSearchBar.h */,
+				091CA6811FD69AF000B789BD /* ItemsSearchBar.m */,
+				09ECAE391FD6D22800CA920A /* ItemCell.h */,
+				09ECAE3A1FD6D22800CA920A /* ItemCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,16 +170,34 @@
 		091CA66F1FD5957300B789BD /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				091CA6701FD596DD00B789BD /* NetworkAPIWrapper.h */,
-				091CA6711FD596DD00B789BD /* NetworkAPIWrapper.m */,
+				091CA6701FD596DD00B789BD /* LoadingManager.h */,
+				091CA6711FD596DD00B789BD /* LoadingManager.m */,
 				091CA66C1FD5957000B789BD /* NetworkAPI.h */,
 				091CA66D1FD5957000B789BD /* NetworkAPI.m */,
 				091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */,
 				091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */,
-				091CA6761FD5A44E00B789BD /* BaseLoadingOperation.h */,
-				091CA6771FD5A44E00B789BD /* BaseLoadingOperation.m */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		091CA67F1FD696B800B789BD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				091CA67C1FD696B400B789BD /* SearchItemManager.h */,
+				091CA67D1FD696B400B789BD /* SearchItemManager.m */,
+				09ECAE1C1FD6B23A00CA920A /* ItemStoreManager.h */,
+				09ECAE1D1FD6B23A00CA920A /* ItemStoreManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		09ECAE3D1FD6D35600CA920A /* Tableview datasource&delegate */ = {
+			isa = PBXGroup;
+			children = (
+				09ECAE3E1FD6D47300CA920A /* ItemsTableViewDataSource.h */,
+				09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */,
+			);
+			name = "Tableview datasource&delegate";
 			sourceTree = "<group>";
 		};
 		BFC0025BA5B521A5C4E5D8EA /* Pods */ = {
@@ -232,24 +240,6 @@
 			productReference = 091CA61F1FD567AB00B789BD /* Ya_croco.app */;
 			productType = "com.apple.product-type.application";
 		};
-		091CA6391FD567AC00B789BD /* Ya_crocoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 091CA6461FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_crocoTests" */;
-			buildPhases = (
-				091CA6361FD567AC00B789BD /* Sources */,
-				091CA6371FD567AC00B789BD /* Frameworks */,
-				091CA6381FD567AC00B789BD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				091CA63C1FD567AC00B789BD /* PBXTargetDependency */,
-			);
-			name = Ya_crocoTests;
-			productName = Ya_crocoTests;
-			productReference = 091CA63A1FD567AC00B789BD /* Ya_crocoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -263,11 +253,6 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
-					};
-					091CA6391FD567AC00B789BD = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 091CA61E1FD567AB00B789BD;
 					};
 				};
 			};
@@ -285,7 +270,6 @@
 			projectRoot = "";
 			targets = (
 				091CA61E1FD567AB00B789BD /* Ya_croco */,
-				091CA6391FD567AC00B789BD /* Ya_crocoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,13 +282,6 @@
 				091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */,
 				091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */,
 				091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		091CA6381FD567AC00B789BD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,37 +343,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				091CA6241FD567AB00B789BD /* AppDelegate.m in Sources */,
-				091CA66E1FD5957000B789BD /* NetworkAPI.m in Sources */,
-				091CA6351FD567AB00B789BD /* main.m in Sources */,
-				091CA65F1FD56A2B00B789BD /* LoadingView.m in Sources */,
-				091CA6591FD569B200B789BD /* PurchasesViewController.swift in Sources */,
-				091CA65A1FD569B200B789BD /* SearchViewController.m in Sources */,
-				091CA66B1FD594FF00B789BD /* Ya_croco.xcdatamodeld in Sources */,
-				091CA6721FD596DD00B789BD /* NetworkAPIWrapper.m in Sources */,
-				091CA6581FD569B200B789BD /* MainViewController.m in Sources */,
-				091CA6751FD59DB600B789BD /* ItemsLoadingOperation.m in Sources */,
-				091CA6781FD5A44E00B789BD /* BaseLoadingOperation.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		091CA6361FD567AC00B789BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				091CA63F1FD567AC00B789BD /* Ya_crocoTests.m in Sources */,
+				09ECAE381FD6CAAC00CA920A /* Item.m in Sources */,
+				09ECAE331FD6B2A500CA920A /* PurchasesViewController.swift in Sources */,
+				09ECAE251FD6B29300CA920A /* SearchItemManager.m in Sources */,
+				09ECAE261FD6B29300CA920A /* MainViewController.m in Sources */,
+				09ECAE3B1FD6D22800CA920A /* ItemCell.m in Sources */,
+				09ECAE271FD6B29300CA920A /* SearchViewController.m in Sources */,
+				09ECAE281FD6B29300CA920A /* LoadingView.m in Sources */,
+				09ECAE291FD6B29300CA920A /* ItemsSearchBar.m in Sources */,
+				09ECAE2C1FD6B29300CA920A /* ItemStoreManager.m in Sources */,
+				09ECAE2D1FD6B29300CA920A /* LoadingManager.m in Sources */,
+				09ECAE2E1FD6B29300CA920A /* NetworkAPI.m in Sources */,
+				09ECAE2F1FD6B29300CA920A /* ItemsLoadingOperation.m in Sources */,
+				09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */,
+				09ECAE301FD6B29300CA920A /* AppDelegate.m in Sources */,
+				09ECAE311FD6B29300CA920A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		091CA63C1FD567AC00B789BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 091CA61E1FD567AB00B789BD /* Ya_croco */;
-			targetProxy = 091CA63B1FD567AC00B789BD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		091CA6281FD567AB00B789BD /* Main.storyboard */ = {
@@ -568,36 +533,6 @@
 			};
 			name = Release;
 		};
-		091CA6471FD567AC00B789BD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Ya_crocoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-crocoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya_croco.app/Ya_croco";
-			};
-			name = Debug;
-		};
-		091CA6481FD567AC00B789BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Ya_crocoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "tm.Ya-crocoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya_croco.app/Ya_croco";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,15 +550,6 @@
 			buildConfigurations = (
 				091CA6441FD567AC00B789BD /* Debug */,
 				091CA6451FD567AC00B789BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		091CA6461FD567AC00B789BD /* Build configuration list for PBXNativeTarget "Ya_crocoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				091CA6471FD567AC00B789BD /* Debug */,
-				091CA6481FD567AC00B789BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

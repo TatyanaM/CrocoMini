@@ -6,7 +6,7 @@
 //  Copyright © 2017 Tatiana Mudryak. All rights reserved.
 //
 
-#import "BaseLoadingOperation.h"
+#import <Foundation/Foundation.h>
 
 @protocol ItemsLoadingOperationDelegate <NSObject>
 
@@ -20,7 +20,7 @@
 /**
  Операция для загрузки списка товаров
  */
-@interface ItemsLoadingOperation : BaseLoadingOperation
+@interface ItemsLoadingOperation : NSOperation
 
 @property (nonatomic, assign) id <ItemsLoadingOperationDelegate> delegate;
 

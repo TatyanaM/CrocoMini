@@ -7,15 +7,18 @@
 //
 
 #import "ItemsLoadingOperation.h"
-#import "NetworkAPIWrapper.h"
+#import "LoadingManager.h"
+
+static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 
 @implementation ItemsLoadingOperation
 
 - (void)main
 {
-
-	NetworkAPIWrapper *networkWrapper = [NetworkAPIWrapper new];
-	[networkWrapper loadItems];
+	LoadingManager *networkWrapper = [LoadingManager new];
+	NSURL *URL = [NSURL URLWithString:itemsDefaultURL];
+	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+	//[networkWrapper loadItemsWithRequest:request];
 }
 
 @end

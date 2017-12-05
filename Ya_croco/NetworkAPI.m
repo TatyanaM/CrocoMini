@@ -28,7 +28,7 @@
 	return self;
 }
 
-- (NSArray *)startLoadingWithResponce:(NSURLResponse **)response error:(NSError **)error
+- (NSArray *)startLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler
 {
 	__block NSArray *data = nil;
 
@@ -36,12 +36,7 @@
 	AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
 
 	NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:self.request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-		if (error) {
-			//error = responseObject;
-		} else {
-			if ([responseObject isKindOfClass:[NSArray class]])
-				data = responseObject;
-		}
+		completionHandler(responseObject, error);
 	}];
 	[dataTask resume];
 	return data;
