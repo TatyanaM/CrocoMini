@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SearchItemManagerDelegate <NSObject>
+
+-(void)searchFinishedWithResult:(NSArray *)result;
+
+@end
+
+
 @interface SearchItemManager : NSObject <UISearchBarDelegate>
+
+@property (nonatomic, assign) id <SearchItemManagerDelegate> delegate;
+
+-(NSArray *)searchItemsWithSubstring:(NSString *)string;
 
 @end

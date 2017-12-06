@@ -7,6 +7,7 @@
 //
 
 #import "Item.h"
+#include "Ya_croco+CoreDataModel.h"
 
 @implementation Item
 
@@ -15,5 +16,22 @@
 @dynamic discount;
 @dynamic imageURL;
 @dynamic retailer;
+
++(NSEntityDescription *)MR_entityDescriptionInContext:(NSManagedObjectContext *)context
+{
+
+}
+
+//+(NSEntityDescription *)MR_entityDescription
+//{
+//	NSEntityDescription *product = makeDbEntity(@"Item", @[
+//														   makeDbAttr(@"itemDescription",              NSStringAttributeType, nil),
+//														   makeDbAttr(@"name",             NSStringAttributeType, nil),
+//														   makeDbAttr(@"smsName",          NSStringAttributeType, nil),
+//														   makeDbAttr(@"descript",         NSStringAttributeType, nil),
+//														   ]);
+
+//	return product;
+//}
 
 @end

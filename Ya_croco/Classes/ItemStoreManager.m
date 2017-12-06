@@ -8,6 +8,7 @@
 
 #import "ItemStoreManager.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "Item+CoreDataClass.h"
 
 @implementation ItemStoreManager
 
@@ -16,8 +17,9 @@
 	NSMutableArray *parsedItems = [NSMutableArray new];
 	for (NSDictionary *info in items)
 	{
-		NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:ManagedObjectContext];
-		NSManagedObject *item = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:ManagedObjectContext];
+//		NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:ManagedObjectContext];
+//		NSManagedObject *item = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:ManagedObjectContext];
+		Item *item = [Item MR_createEntityInContext:ManagedObjectContext];
 
 		NSString *keyValue = nil;
 		for (NSString *key in info) {

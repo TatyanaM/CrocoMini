@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Item.h"
+#import "Item+CoreDataClass.h"
 
 extern NSString *const ItemCellIdentifier;
 

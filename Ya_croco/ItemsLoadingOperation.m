@@ -28,10 +28,12 @@ static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 			if (itemsArray)
 			{
 				NSArray *items = [ItemStoreManager createItemsWithData:itemsArray];
-				[self.delegate itemsLoadingFinishedWithResult:items];
+				if ([self.delegate respondsToSelector:@selector(itemsLoadingFinishedWithResult:)])
+					[self.delegate itemsLoadingFinishedWithResult:items];
 			} else
 			{
-				[self.delegate itemsLoadingFailedWithError:error];
+				if ([self.delegate respondsToSelector:@selector(itemsLoadingFailedWithError:)])
+					[self.delegate itemsLoadingFailedWithError:error];
 			}
 		}
 	}

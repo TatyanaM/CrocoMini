@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Item.h"
+#import "Item+CoreDataClass.h"
 
 @interface ItemsTableViewDataSource : NSObject <UITableViewDataSource>
 

@@ -15,7 +15,7 @@
 
 static NSString *const SearchViewControllerTitle = @"Поиск";
 
-@interface SearchViewController () <LoadingManagerDelegate>
+@interface SearchViewController () <LoadingManagerDelegate, SearchItemManagerDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
@@ -40,6 +40,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	self.title = SearchViewControllerTitle;
 
 	self.searchManager = [SearchItemManager new];
+	self.searchManager.delegate = self;
 	self.loadingManager = [LoadingManager new];
 	self.loadingManager.delegate = self;
 
@@ -114,6 +115,14 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 -(void)loadingFinishedWithError:(NSString *)error
 {
 	self.loadingView.hidden = YES;
+}
+
+#pragma mark - SearchItemManagerDelegate
+
+-(void)searchFinishedWithResult:(NSArray *)result
+{
+	self.tableViewDataSource.items = result;
+	[self.tableView reloadData];
 }
 
 #pragma mark - Constraints

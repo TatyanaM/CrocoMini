@@ -10,23 +10,25 @@
 		091CA62A1FD567AB00B789BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6281FD567AB00B789BD /* Main.storyboard */; };
 		091CA62F1FD567AB00B789BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091CA62E1FD567AB00B789BD /* Assets.xcassets */; };
 		091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */; };
-		09ECAE251FD6B29300CA920A /* SearchItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA67D1FD696B400B789BD /* SearchItemManager.m */; };
-		09ECAE261FD6B29300CA920A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6531FD569B200B789BD /* MainViewController.m */; };
-		09ECAE271FD6B29300CA920A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
-		09ECAE281FD6B29300CA920A /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
-		09ECAE291FD6B29300CA920A /* ItemsSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6811FD69AF000B789BD /* ItemsSearchBar.m */; };
-		09ECAE2C1FD6B29300CA920A /* ItemStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE1D1FD6B23A00CA920A /* ItemStoreManager.m */; };
-		09ECAE2D1FD6B29300CA920A /* LoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6711FD596DD00B789BD /* LoadingManager.m */; };
-		09ECAE2E1FD6B29300CA920A /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA66D1FD5957000B789BD /* NetworkAPI.m */; };
-		09ECAE2F1FD6B29300CA920A /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */; };
-		09ECAE301FD6B29300CA920A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
-		09ECAE311FD6B29300CA920A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
-		09ECAE331FD6B2A500CA920A /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
-		09ECAE3B1FD6D22800CA920A /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3A1FD6D22800CA920A /* ItemCell.m */; };
-		09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */; };
-		09ECAE441FD7D43400CA920A /* OperationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE431FD7D43400CA920A /* OperationsManager.m */; };
-		09ECAE4D1FD7DAD200CA920A /* BaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */; };
-		09F7C0101FD8131B00982378 /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */; };
+		09F7C01A1FD81D7300982378 /* BaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */; };
+		09F7C01B1FD81D7300982378 /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */; };
+		09F7C01C1FD81D7300982378 /* OperationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE431FD7D43400CA920A /* OperationsManager.m */; };
+		09F7C01D1FD81D7300982378 /* LoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6711FD596DD00B789BD /* LoadingManager.m */; };
+		09F7C01E1FD81D7300982378 /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA66D1FD5957000B789BD /* NetworkAPI.m */; };
+		09F7C01F1FD81D7300982378 /* SearchItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA67D1FD696B400B789BD /* SearchItemManager.m */; };
+		09F7C0201FD81D7300982378 /* ItemStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE1D1FD6B23A00CA920A /* ItemStoreManager.m */; };
+		09F7C0211FD81D7300982378 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6531FD569B200B789BD /* MainViewController.m */; };
+		09F7C0221FD81D7300982378 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6561FD569B200B789BD /* SearchViewController.m */; };
+		09F7C0231FD81D7300982378 /* ItemsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */; };
+		09F7C0241FD81D7300982378 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA65E1FD56A2B00B789BD /* LoadingView.m */; };
+		09F7C0251FD81D7300982378 /* ItemsSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6811FD69AF000B789BD /* ItemsSearchBar.m */; };
+		09F7C0261FD81D7300982378 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3A1FD6D22800CA920A /* ItemCell.m */; };
+		09F7C0271FD81D7300982378 /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F7C0151FD81A8B00982378 /* Item+CoreDataClass.m */; };
+		09F7C0281FD81D7300982378 /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F7C0171FD81A8B00982378 /* Item+CoreDataProperties.m */; };
+		09F7C0291FD81D7300982378 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6231FD567AB00B789BD /* AppDelegate.m */; };
+		09F7C02A1FD81D7300982378 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6341FD567AB00B789BD /* main.m */; };
+		09F7C02B1FD81D7900982378 /* PurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6541FD569B200B789BD /* PurchasesViewController.swift */; };
+		09F7C02C1FD81D7F00982378 /* Ya_croco.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */; };
 		76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,10 @@
 		09ECAE431FD7D43400CA920A /* OperationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OperationsManager.m; path = Classes/OperationsManager.m; sourceTree = "<group>"; };
 		09ECAE4B1FD7DAD200CA920A /* BaseOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseOperation.h; path = Classes/BaseOperation.h; sourceTree = "<group>"; };
 		09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseOperation.m; path = Classes/BaseOperation.m; sourceTree = "<group>"; };
+		09F7C0141FD81A8B00982378 /* Item+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		09F7C0151FD81A8B00982378 /* Item+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		09F7C0161FD81A8B00982378 /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		09F7C0171FD81A8B00982378 /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
 		48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.debug.xcconfig"; sourceTree = "<group>"; };
 		67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.release.xcconfig"; sourceTree = "<group>"; };
 		E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ya_croco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +140,10 @@
 		091CA65B1FD569BD00B789BD /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				09F7C0141FD81A8B00982378 /* Item+CoreDataClass.h */,
+				09F7C0151FD81A8B00982378 /* Item+CoreDataClass.m */,
+				09F7C0161FD81A8B00982378 /* Item+CoreDataProperties.h */,
+				09F7C0171FD81A8B00982378 /* Item+CoreDataProperties.m */,
 				091CA6691FD594FF00B789BD /* Ya_croco.xcdatamodeld */,
 			);
 			name = Database;
@@ -357,23 +367,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F7C0101FD8131B00982378 /* Ya_croco.xcdatamodeld in Sources */,
-				09ECAE4D1FD7DAD200CA920A /* BaseOperation.m in Sources */,
-				09ECAE331FD6B2A500CA920A /* PurchasesViewController.swift in Sources */,
-				09ECAE251FD6B29300CA920A /* SearchItemManager.m in Sources */,
-				09ECAE261FD6B29300CA920A /* MainViewController.m in Sources */,
-				09ECAE3B1FD6D22800CA920A /* ItemCell.m in Sources */,
-				09ECAE271FD6B29300CA920A /* SearchViewController.m in Sources */,
-				09ECAE281FD6B29300CA920A /* LoadingView.m in Sources */,
-				09ECAE291FD6B29300CA920A /* ItemsSearchBar.m in Sources */,
-				09ECAE2C1FD6B29300CA920A /* ItemStoreManager.m in Sources */,
-				09ECAE2D1FD6B29300CA920A /* LoadingManager.m in Sources */,
-				09ECAE2E1FD6B29300CA920A /* NetworkAPI.m in Sources */,
-				09ECAE2F1FD6B29300CA920A /* ItemsLoadingOperation.m in Sources */,
-				09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */,
-				09ECAE441FD7D43400CA920A /* OperationsManager.m in Sources */,
-				09ECAE301FD6B29300CA920A /* AppDelegate.m in Sources */,
-				09ECAE311FD6B29300CA920A /* main.m in Sources */,
+				09F7C02C1FD81D7F00982378 /* Ya_croco.xcdatamodeld in Sources */,
+				09F7C02B1FD81D7900982378 /* PurchasesViewController.swift in Sources */,
+				09F7C01A1FD81D7300982378 /* BaseOperation.m in Sources */,
+				09F7C01B1FD81D7300982378 /* ItemsLoadingOperation.m in Sources */,
+				09F7C01C1FD81D7300982378 /* OperationsManager.m in Sources */,
+				09F7C01D1FD81D7300982378 /* LoadingManager.m in Sources */,
+				09F7C01E1FD81D7300982378 /* NetworkAPI.m in Sources */,
+				09F7C01F1FD81D7300982378 /* SearchItemManager.m in Sources */,
+				09F7C0201FD81D7300982378 /* ItemStoreManager.m in Sources */,
+				09F7C0211FD81D7300982378 /* MainViewController.m in Sources */,
+				09F7C0221FD81D7300982378 /* SearchViewController.m in Sources */,
+				09F7C0231FD81D7300982378 /* ItemsTableViewDataSource.m in Sources */,
+				09F7C0241FD81D7300982378 /* LoadingView.m in Sources */,
+				09F7C0251FD81D7300982378 /* ItemsSearchBar.m in Sources */,
+				09F7C0261FD81D7300982378 /* ItemCell.m in Sources */,
+				09F7C0271FD81D7300982378 /* Item+CoreDataClass.m in Sources */,
+				09F7C0281FD81D7300982378 /* Item+CoreDataProperties.m in Sources */,
+				09F7C0291FD81D7300982378 /* AppDelegate.m in Sources */,
+				09F7C02A1FD81D7300982378 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
