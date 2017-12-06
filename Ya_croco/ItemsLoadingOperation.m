@@ -20,20 +20,21 @@ static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 {
 	NSString *error = nil;
 	id data = [NetworkAPI startSyncLoadingWithURL:itemsDefaultURL params:nil error:error];
-	if ([data isKindOfClass:[NSArray class]])
+	if (!self.cancelled)
 	{
-		NSArray *itemsArray = data;
-		if (itemsArray)
+		if ([data isKindOfClass:[NSArray class]])
 		{
-			NSArray *items = [ItemStoreManager createItemsWithData:itemsArray];
-			[self.delegate itemsLoadingFinishedWithResult:items];
-		} else
-		{
-			[self.delegate itemsLoadingFailedWithError:error];
+			NSArray *itemsArray = data;
+			if (itemsArray)
+			{
+				NSArray *items = [ItemStoreManager createItemsWithData:itemsArray];
+				[self.delegate itemsLoadingFinishedWithResult:items];
+			} else
+			{
+				[self.delegate itemsLoadingFailedWithError:error];
+			}
 		}
 	}
-
-
 }
 
 @end

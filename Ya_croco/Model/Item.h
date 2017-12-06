@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MagicalRecord/MagicalRecord.h>
 
-@interface Item : NSObject
+@interface Item : NSManagedObject
 
 @property (nonatomic, copy) NSString *itemDescription;
 @property (nonatomic, copy) NSString *imageURL;

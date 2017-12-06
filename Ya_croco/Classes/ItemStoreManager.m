@@ -7,8 +7,7 @@
 //
 
 #import "ItemStoreManager.h"
-#import "Item.h"
-
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation ItemStoreManager
 
@@ -17,7 +16,8 @@
 	NSMutableArray *parsedItems = [NSMutableArray new];
 	for (NSDictionary *info in items)
 	{
-		Item *item = [[Item alloc] init];
+		NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:ManagedObjectContext];
+		NSManagedObject *item = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:ManagedObjectContext];
 
 		NSString *keyValue = nil;
 		for (NSString *key in info) {
@@ -25,13 +25,14 @@
 			if ([keyValue isEqualToString:@"description"]) {
 				keyValue = @"itemDescription";
 			}
+
 			if ([item respondsToSelector:NSSelectorFromString(keyValue)]) {
 				[item setValue:info[key] forKey:keyValue];
 			}
 		}
 		[parsedItems addObject:item];
 	}
-
+	[ManagedObjectContext MR_saveToPersistentStoreAndWait];
 	return [parsedItems copy];
 }
 

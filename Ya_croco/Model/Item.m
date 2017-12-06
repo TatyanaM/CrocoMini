@@ -10,6 +10,10 @@
 
 @implementation Item
 
-
+@dynamic itemDescription;
+@dynamic price;
+@dynamic discount;
+@dynamic imageURL;
+@dynamic retailer;
 
 @end

@@ -48,7 +48,7 @@
 						   parameters:params
 								 task:NULL
 								error:&error];
-	errorMessage = error.description;
+	errorMessage = error.description; //TO_DO
 	return result;
 }
 

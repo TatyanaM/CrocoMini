@@ -24,18 +24,18 @@ static NSString *const wrongDataFormatError = @"Ошибка загрузки д
 	[[OperationsManager sharedManager].operationsQueue addOperation:operation];
 }
 
-#pragma mark - LoadingManagerDelegate
+#pragma mark - ItemsLoadingOperationDelegate
 
 -(void)itemsLoadingFailedWithError:(NSString *)error
 {
-	dispatch_async(dispatch_get_main_queue(), ^{{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.delegate loadingFinishedWithError:error];
 	});
 }
 
 -(void)itemsLoadingFinishedWithResult:(NSArray *)result
 {
-	dispatch_async(dispatch_get_main_queue(), ^{{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.delegate itemsLoaded:result];
 	});
 }

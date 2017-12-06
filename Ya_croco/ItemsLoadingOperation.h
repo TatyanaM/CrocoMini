@@ -17,9 +17,6 @@
 @end
 
 
-/**
-  An operation for loading a list of items
- */
 @interface ItemsLoadingOperation : BaseOperation
 
 @property (nonatomic, assign) id <ItemsLoadingOperationDelegate> delegate;
