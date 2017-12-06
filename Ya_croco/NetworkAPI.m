@@ -8,6 +8,7 @@
 
 #import "NetworkAPI.h"
 #import <AFNetworking/AFNetworking.h>
+#import <AFHTTPSessionManager+Synchronous.h>
 
 @interface NetworkAPI ()
 
@@ -17,7 +18,7 @@
 
 @implementation NetworkAPI
 
-- (instancetype)initWithRequest:(NSURLRequest *)request
+-(instancetype)initWithRequest:(NSURLRequest *)request
 {
 	self = [super init];
 	if (self)
@@ -28,10 +29,8 @@
 	return self;
 }
 
-- (NSArray *)startLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler
+-(void)startAsyncLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler
 {
-	__block NSArray *data = nil;
-
 	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
 	AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
 
@@ -39,7 +38,18 @@
 		completionHandler(responseObject, error);
 	}];
 	[dataTask resume];
-	return data;
+}
+
++(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params error:(NSString *)errorMessage
+{
+	AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+	NSError *error = nil;
+	id result = [manager syncGET:urlString
+						   parameters:params
+								 task:NULL
+								error:&error];
+	errorMessage = error.description;
+	return result;
 }
 
 @end

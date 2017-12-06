@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ItemsLoadingOperation.h"
 
 typedef void (^ItemCompletionHandler)(id items, NSError *error);
 
@@ -17,11 +18,10 @@ typedef void (^ItemCompletionHandler)(id items, NSError *error);
 
 @end
 
-@interface LoadingManager : NSObject
-
+@interface LoadingManager : NSObject <ItemsLoadingOperationDelegate>
 
 @property (nonatomic, assign) id <LoadingManagerDelegate> delegate;
 
--(void)loadItems;//WithRequest:(NSURLRequest *)request;
+-(void)loadItems;
 
 @end

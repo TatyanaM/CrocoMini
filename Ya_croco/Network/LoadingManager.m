@@ -7,39 +7,37 @@
 //
 
 #import "LoadingManager.h"
-#import "NetworkAPI.h"
+#import "ItemsLoadingOperation.h"
 #import "ItemStoreManager.h"
+#import "OperationsManager.h"
+
 
 static NSString *const wrongDataFormatError = @"Ошибка загрузки данных";
-static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
+
 
 @implementation LoadingManager
 
--(void)loadItems//WithRequest:(NSURLRequest *)request
+-(void)loadItems
 {
-	NSURL *URL = [NSURL URLWithString:itemsDefaultURL];
-	NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-	NetworkAPI *networkAPI = [[NetworkAPI alloc] initWithRequest:request];
-	[networkAPI startLoadingWithCompletionHandler:^(id item, NSError *error) {
-		if (error)
-		{
-			[self.delegate loadingFinishedWithError:error.description];
-		} else
-		{
-			if ([item isKindOfClass:[NSArray class]]) {
-				[self handleReceivedItems:(NSArray *)item];
-			} else {
-				[self.delegate loadingFinishedWithError:wrongDataFormatError];
-			}
-		}
-	}];
+	ItemsLoadingOperation *operation = [ItemsLoadingOperation new];
+	operation.delegate = self;
+	[[OperationsManager sharedManager].operationsQueue addOperation:operation];
 }
 
--(void)handleReceivedItems:(NSArray *)items
+#pragma mark - LoadingManagerDelegate
+
+-(void)itemsLoadingFailedWithError:(NSString *)error
 {
-	ItemStoreManager *itemManager = [ItemStoreManager new];
-	NSArray *resultItems = [itemManager createItemsWithData:items];
-	[self.delegate itemsLoaded:resultItems];
+	dispatch_async(dispatch_get_main_queue(), ^{{
+		[self.delegate loadingFinishedWithError:error];
+	});
+}
+
+-(void)itemsLoadingFinishedWithResult:(NSArray *)result
+{
+	dispatch_async(dispatch_get_main_queue(), ^{{
+		[self.delegate itemsLoaded:result];
+	});
 }
 
 @end

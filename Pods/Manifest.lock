@@ -5,6 +5,8 @@ PODS:
     - AFNetworking/Security (= 3.1.0)
     - AFNetworking/Serialization (= 3.1.0)
     - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking-Synchronous/3.x (1.1.0):
+    - AFNetworking (~> 3.0)
   - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -21,14 +23,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AFNetworking-Synchronous/3.x
   - MagicalRecord
   - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking-Synchronous: 61b98fb931b114b0da2b243957ea533e2954c2a2
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
 
-PODFILE CHECKSUM: 4255edc1419d5407795db4ea4649c2a5b4789e68
+PODFILE CHECKSUM: 4623453ac1c2fb2bcda6f2b9c282649d936e2db0
 
 COCOAPODS: 1.3.1

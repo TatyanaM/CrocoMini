@@ -12,8 +12,9 @@ typedef void (^ResponseCompletionHandler)(id item, NSError *error);
 
 @interface NetworkAPI : NSObject
 
-- (instancetype)initWithRequest:(NSURLRequest *)request;
+-(instancetype)initWithRequest:(NSURLRequest *)request;
 
-- (NSArray *)startLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler;
+-(void)startAsyncLoadingWithCompletionHandler:(ResponseCompletionHandler)completionHandler;
++(id)startSyncLoadingWithURL:(NSString *)urlString params:(NSDictionary *)params error:(NSString *)errorMessage;
 
 @end

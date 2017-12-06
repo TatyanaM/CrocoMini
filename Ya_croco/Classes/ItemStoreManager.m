@@ -12,7 +12,7 @@
 
 @implementation ItemStoreManager
 
--(NSArray *)createItemsWithData:(NSArray *)items
++(NSArray *)createItemsWithData:(NSArray *)items
 {
 	NSMutableArray *parsedItems = [NSMutableArray new];
 	for (NSDictionary *info in items)

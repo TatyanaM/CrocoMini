@@ -6,21 +6,21 @@
 //  Copyright © 2017 Tatiana Mudryak. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseOperation.h"
 
 @protocol ItemsLoadingOperationDelegate <NSObject>
 
 @required
-- (void)itemsLoadingFailedWithError:(NSError *)error;
+- (void)itemsLoadingFailedWithError:(NSString *)error;
 - (void)itemsLoadingFinishedWithResult:(NSArray *)result;
 
 @end
 
 
 /**
- Операция для загрузки списка товаров
+  An operation for loading a list of items
  */
-@interface ItemsLoadingOperation : NSOperation
+@interface ItemsLoadingOperation : BaseOperation
 
 @property (nonatomic, assign) id <ItemsLoadingOperationDelegate> delegate;
 

@@ -25,6 +25,8 @@
 		09ECAE381FD6CAAC00CA920A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE371FD6CAAC00CA920A /* Item.m */; };
 		09ECAE3B1FD6D22800CA920A /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3A1FD6D22800CA920A /* ItemCell.m */; };
 		09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */; };
+		09ECAE441FD7D43400CA920A /* OperationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE431FD7D43400CA920A /* OperationsManager.m */; };
+		09ECAE4D1FD7DAD200CA920A /* BaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */; };
 		76DBE08DAAE0D63D0AE280E3 /* libPods-Ya_croco.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +54,8 @@
 		091CA66D1FD5957000B789BD /* NetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkAPI.m; sourceTree = "<group>"; };
 		091CA6701FD596DD00B789BD /* LoadingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoadingManager.h; path = Network/LoadingManager.h; sourceTree = "<group>"; };
 		091CA6711FD596DD00B789BD /* LoadingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoadingManager.m; path = Network/LoadingManager.m; sourceTree = "<group>"; };
-		091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsLoadingOperation.h; path = Network/ItemsLoadingOperation.h; sourceTree = "<group>"; };
-		091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsLoadingOperation.m; path = Network/ItemsLoadingOperation.m; sourceTree = "<group>"; };
+		091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsLoadingOperation.h; sourceTree = "<group>"; };
+		091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsLoadingOperation.m; sourceTree = "<group>"; };
 		091CA67C1FD696B400B789BD /* SearchItemManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchItemManager.h; sourceTree = "<group>"; };
 		091CA67D1FD696B400B789BD /* SearchItemManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchItemManager.m; sourceTree = "<group>"; };
 		091CA6801FD69AF000B789BD /* ItemsSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsSearchBar.h; path = Views/ItemsSearchBar.h; sourceTree = "<group>"; };
@@ -66,6 +68,10 @@
 		09ECAE3A1FD6D22800CA920A /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = Views/ItemCell.m; sourceTree = "<group>"; };
 		09ECAE3E1FD6D47300CA920A /* ItemsTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemsTableViewDataSource.h; path = Classes/ItemsTableViewDataSource.h; sourceTree = "<group>"; };
 		09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemsTableViewDataSource.m; path = Classes/ItemsTableViewDataSource.m; sourceTree = "<group>"; };
+		09ECAE421FD7D43400CA920A /* OperationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OperationsManager.h; path = Classes/OperationsManager.h; sourceTree = "<group>"; };
+		09ECAE431FD7D43400CA920A /* OperationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OperationsManager.m; path = Classes/OperationsManager.m; sourceTree = "<group>"; };
+		09ECAE4B1FD7DAD200CA920A /* BaseOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseOperation.h; path = Classes/BaseOperation.h; sourceTree = "<group>"; };
+		09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseOperation.m; path = Classes/BaseOperation.m; sourceTree = "<group>"; };
 		48742FBECC6E58DE4C33AB1B /* Pods-Ya_croco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.debug.xcconfig"; sourceTree = "<group>"; };
 		67D9C0587C3FE8DE08DB75E6 /* Pods-Ya_croco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ya_croco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ya_croco/Pods-Ya_croco.release.xcconfig"; sourceTree = "<group>"; };
 		E8B7DBC6752E7B6576CC1447 /* libPods-Ya_croco.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Ya_croco.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +115,6 @@
 				09ECAE3D1FD6D35600CA920A /* Tableview datasource&delegate */,
 				091CA6601FD56A3000B789BD /* Views */,
 				091CA65B1FD569BD00B789BD /* Database */,
-				091CA66F1FD5957300B789BD /* Network */,
 				091CA65C1FD569D900B789BD /* Application */,
 			);
 			path = Ya_croco;
@@ -174,8 +179,6 @@
 				091CA6711FD596DD00B789BD /* LoadingManager.m */,
 				091CA66C1FD5957000B789BD /* NetworkAPI.h */,
 				091CA66D1FD5957000B789BD /* NetworkAPI.m */,
-				091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */,
-				091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -183,6 +186,8 @@
 		091CA67F1FD696B800B789BD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				09ECAE411FD7D41800CA920A /* Base */,
+				091CA66F1FD5957300B789BD /* Network */,
 				091CA67C1FD696B400B789BD /* SearchItemManager.h */,
 				091CA67D1FD696B400B789BD /* SearchItemManager.m */,
 				09ECAE1C1FD6B23A00CA920A /* ItemStoreManager.h */,
@@ -198,6 +203,19 @@
 				09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */,
 			);
 			name = "Tableview datasource&delegate";
+			sourceTree = "<group>";
+		};
+		09ECAE411FD7D41800CA920A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				09ECAE4B1FD7DAD200CA920A /* BaseOperation.h */,
+				09ECAE4C1FD7DAD200CA920A /* BaseOperation.m */,
+				091CA6731FD59DB600B789BD /* ItemsLoadingOperation.h */,
+				091CA6741FD59DB600B789BD /* ItemsLoadingOperation.m */,
+				09ECAE421FD7D43400CA920A /* OperationsManager.h */,
+				09ECAE431FD7D43400CA920A /* OperationsManager.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		BFC0025BA5B521A5C4E5D8EA /* Pods */ = {
@@ -343,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09ECAE4D1FD7DAD200CA920A /* BaseOperation.m in Sources */,
 				09ECAE381FD6CAAC00CA920A /* Item.m in Sources */,
 				09ECAE331FD6B2A500CA920A /* PurchasesViewController.swift in Sources */,
 				09ECAE251FD6B29300CA920A /* SearchItemManager.m in Sources */,
@@ -356,6 +375,7 @@
 				09ECAE2E1FD6B29300CA920A /* NetworkAPI.m in Sources */,
 				09ECAE2F1FD6B29300CA920A /* ItemsLoadingOperation.m in Sources */,
 				09ECAE401FD6D47300CA920A /* ItemsTableViewDataSource.m in Sources */,
+				09ECAE441FD7D43400CA920A /* OperationsManager.m in Sources */,
 				09ECAE301FD6B29300CA920A /* AppDelegate.m in Sources */,
 				09ECAE311FD6B29300CA920A /* main.m in Sources */,
 			);

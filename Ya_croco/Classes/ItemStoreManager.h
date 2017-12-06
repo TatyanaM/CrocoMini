@@ -19,6 +19,6 @@
  @param items array of dictionary from JSON
  @return array objects of type Item
  */
--(NSArray *)createItemsWithData:(NSArray *)items;
++(NSArray *)createItemsWithData:(NSArray *)items;
 
 @end
