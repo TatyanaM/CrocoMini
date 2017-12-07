@@ -14,7 +14,7 @@
 
 - (NSArray *)searchItemsWithSubstring:(NSString *)string
 {
-	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"SELF MATCHES %@", @".*%@.*", string];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat: @"itemDesription CONTAINS %@", string];
 	NSArray *items = [Item MR_findAllWithPredicate:predicate inContext:ManagedObjectContext];
 	return items;
 }

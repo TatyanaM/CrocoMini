@@ -28,10 +28,31 @@ NSString *const ItemCellIdentifier = @"ItemCellIdentifier";
     [super awakeFromNib];
 }
 
--(void)configureCell
+-(void)setItemDescription:(NSString *)itemDescription
 {
-	self.textLabel.text = self.item.itemDescription;
+	_itemDescription = itemDescription;
+	self.descriptionLabel.text = _itemDescription;
 }
+
+-(void)setPrice:(NSString *)price
+{
+	_price = price;
+	self.priceLabel.text = _price;
+}
+
+-(void)setDiscount:(NSString *)discount
+{
+	_discount = discount;
+	self.descriptionLabel.text = _discount;
+}
+
+-(void)setRetailer:(NSString *)retailer
+{
+	_retailer = retailer;
+	self.retailerLabel.text = retailer;
+}
+
+
 
 -(void)updateConstraints
 {

@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Item+CoreDataClass.h"
 
 extern NSString *const ItemCellIdentifier;
 
 @interface ItemCell : UITableViewCell
 
-@property (nonatomic, strong) Item *item;
--(void)configureCell;
+@property (nonatomic, strong) NSString *itemDescription;
+@property (nonatomic, strong) NSString *retailer;
+@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSString *discount;
+@property (nonatomic, strong) UIImage *itemImage;
+@property (nonatomic) BOOL itemInCart;
 
 @end
