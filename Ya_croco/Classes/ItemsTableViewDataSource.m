@@ -12,30 +12,35 @@
 
 @implementation ItemsTableViewDataSource
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	ItemCell *newCell = [tableView dequeueReusableCellWithIdentifier:ItemCellIdentifier];
+	ItemCell *newCell = [tableView dequeueReusableCellWithIdentifier:[ItemCell reuseIdentifier]];
 	if (!newCell)
 	{
-		newCell = [[ItemCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ItemCellIdentifier];
+		newCell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[ItemCell reuseIdentifier]];
 	}
 
-	Item *item = nil;
-	if (self.searchEnabled) {
-		item = [self.filteredItems objectAtIndex:indexPath.row];
-	} else {
-		item = [self.items objectAtIndex:indexPath.row];
-	}
-
+	[self configuteCell:newCell atIndexPath:indexPath];
 	return newCell;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)configuteCell:(ItemCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+	Item *item = self.searchEnabled ? [self.filteredItems objectAtIndex:indexPath.row] : [self.items objectAtIndex:indexPath.row];
+	cell.itemDescriptionLabel.text = item.itemDescription;
+	cell.retailerLabel.text = item.retailer;
+	cell.priceLabel.text = [NSString stringWithFormat:@"%f.2", item.price];
+	cell.discountLabel.text = [NSString stringWithFormat:@"%f.2", item.discount];
+
+	[cell setNeedsUpdateConstraints];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 	return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	if (self.searchEnabled) {
 		return self.filteredItems.count;

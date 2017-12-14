@@ -12,5 +12,6 @@
 #import <Masonry/Masonry.h>
 #import "LoadingView.h"
 #import "Constants.h"
+#import "CrocoFont.h"
 
 #endif /* Prefix_h */

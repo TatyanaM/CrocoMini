@@ -8,6 +8,8 @@
 
 #define ManagedObjectContext [NSManagedObjectContext MR_defaultContext]
 
+#define ItemFontMedium(SIZE)   [SBFont fontWithName:SBFontMediumName size:(SIZE)]
+
 #define LoadingViewWidth 240.0 //default loading view width
 #define LoadingViewHeight 60.0 //default loading view height
 #define SearchBarHeight 60.0 //default search bar height

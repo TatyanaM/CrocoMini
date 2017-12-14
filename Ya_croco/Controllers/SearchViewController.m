@@ -74,9 +74,12 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	//self.tableView.estimatedRowHeight = 80;
+	self.tableView.rowHeight = 100;//UITableViewAutomaticDimension;
 	[self.view addSubview:self.tableView];
 
 	self.tableViewDataSource = [ItemsTableViewDataSource new];
+	self.tableViewDataSource.searchEnabled = NO;
 	self.tableView.dataSource = self.tableViewDataSource;
 }
 
@@ -109,6 +112,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.loadingView.hidden = YES;
 }
+
 
 #pragma mark - Search delegate methods
 
@@ -147,6 +151,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self.tableView reloadData];
 
 }
+
 
 #pragma mark - Constraints
 
