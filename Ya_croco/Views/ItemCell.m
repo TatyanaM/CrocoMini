@@ -12,7 +12,8 @@ static CGFloat const ItemCellTopOffset = 8.0;
 static CGFloat const ItemCellLeftOffset = 8.0;
 static CGFloat const ItemCellRightOffset = 8.0;
 static CGFloat const ItemCellBettweenElementsOffset = 8.0;
-static CGFloat const ItemCellImageViewWidth = 8.0;
+static CGFloat const ItemCellImageViewWidth = 44.0;
+static CGFloat const ItemCellButtonWidth = 30.0;
 
 @interface ItemCell ()
 
@@ -41,26 +42,29 @@ static CGFloat const ItemCellImageViewWidth = 8.0;
 	{
 		_itemDescriptionLabel = [UILabel new];
 		_itemDescriptionLabel.numberOfLines = 0;
-		_itemDescriptionLabel.font = FontThin(12);
+		_itemDescriptionLabel.font = FontThin(14);
 		[self.contentView addSubview:_itemDescriptionLabel];
 
 		_itemImageView = [UIImageView new];
 		_itemImageView.contentMode = UIViewContentModeScaleAspectFill;
+		_itemImageView.backgroundColor = [UIColor blueColor];
 		[self.contentView addSubview:_itemImageView];
 
 		_retailerLabel = [UILabel new];
 		_retailerLabel.numberOfLines = 0;
-		_retailerLabel.font = FontThin(10);
+		_retailerLabel.font = FontThin(12);
 		[self.contentView addSubview:_retailerLabel];
 
 		_priceLabel = [UILabel new];
 		_priceLabel.numberOfLines = 1;
-		_priceLabel.font = FontRegular(9);
+		_priceLabel.textAlignment = NSTextAlignmentLeft;
+		_priceLabel.font = FontRegular(10);
 		[self.contentView addSubview:_priceLabel];
 
 		_discountLabel = [UILabel new];
 		_priceLabel.numberOfLines = 1;
-		_discountLabel.font = FontRegular(9);
+		_priceLabel.textAlignment = NSTextAlignmentLeft;
+		_discountLabel.font = FontRegular(10);
 		[self.contentView addSubview:_discountLabel];
 
 		_addToCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -92,7 +96,7 @@ static CGFloat const ItemCellImageViewWidth = 8.0;
 		[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 			make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
 			make.right.equalTo(self.contentView).offset(ItemCellRightOffset);
-
+			make.width.and.height.equalTo(@(ItemCellImageViewWidth));
 		}];
 	}
 
@@ -100,34 +104,32 @@ static CGFloat const ItemCellImageViewWidth = 8.0;
 		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
 		make.right.equalTo(self.contentView).offset(-labelRightOffset);
-		//make.bottom.equalTo(self.retailerLabel).offset(ItemCellBettweenElementsOffset);
 		make.height.equalTo(@([self heightForLabel:self.itemDescriptionLabel]));
 	}];
 
 	[self.retailerLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-		make.top.equalTo(self.itemDescriptionLabel).offset(ItemCellBettweenElementsOffset);
+		make.top.equalTo(self.itemDescriptionLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
 		make.width.equalTo(self.itemDescriptionLabel);
-		//make.bottom.equalTo(self.priceLabel).offset(ItemCellBettweenElementsOffset);
 		make.height.equalTo(@([self heightForLabel:self.retailerLabel]));
 	}];
 
 	[self.priceLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
 		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
-		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
 	}];
 
 	[self.discountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-		make.left.equalTo(self.priceLabel).offset(ItemCellLeftOffset);
+		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.right.equalTo(self.addToCartButton).offset(ItemCellBettweenElementsOffset);
-		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
+		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
 	}];
 
 	[self.addToCartButton mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.right.equalTo(self).offset(ItemCellRightOffset);
 		make.bottom.equalTo(self).offset(ItemCellTopOffset);
-		make.width.and.height.equalTo(@(ItemCellImageViewWidth));
+		make.width.and.height.equalTo(@(ItemCellButtonWidth));
 	}];
 
 	[super updateConstraints];

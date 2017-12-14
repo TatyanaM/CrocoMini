@@ -13,7 +13,7 @@
 
 static NSString *const SearchViewControllerTitle = @"Поиск";
 
-@interface SearchViewController () <LoadingManagerDelegate, UISearchBarDelegate>
+@interface SearchViewController () <LoadingManagerDelegate, UISearchBarDelegate, UITableViewDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
@@ -67,6 +67,10 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self.loadingManager loadItems];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return UITableViewAutomaticDimension;
+}
 
 #pragma mark - UI
 
@@ -74,8 +78,9 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	//self.tableView.estimatedRowHeight = 80;
-	self.tableView.rowHeight = 100;//UITableViewAutomaticDimension;
+	self.tableView.delegate = self;
+//	self.tableView.estimatedRowHeight = 160;
+//	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	[self.view addSubview:self.tableView];
 
 	self.tableViewDataSource = [ItemsTableViewDataSource new];

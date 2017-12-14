@@ -28,10 +28,10 @@
 {
 	Item *item = self.searchEnabled ? [self.filteredItems objectAtIndex:indexPath.row] : [self.items objectAtIndex:indexPath.row];
 	cell.itemDescriptionLabel.text = item.itemDescription;
-	cell.retailerLabel.text = item.retailer;
-	cell.priceLabel.text = [NSString stringWithFormat:@"%f.2", item.price];
-	cell.discountLabel.text = [NSString stringWithFormat:@"%f.2", item.discount];
-
+	cell.retailerLabel.text = [NSString stringWithFormat:@"Продавец: %@", item.retailer];
+	cell.priceLabel.text = [NSString stringWithFormat:@"Цена: %.2f", item.price];
+	cell.discountLabel.text = [NSString stringWithFormat:@"Скидка: %.2f", item.discount];
+	cell.itemImageView.image = [UIImage new];
 	[cell setNeedsUpdateConstraints];
 }
 
