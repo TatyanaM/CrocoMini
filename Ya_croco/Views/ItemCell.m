@@ -9,11 +9,11 @@
 #import "ItemCell.h"
 
 static CGFloat const ItemCellTopOffset = 8.0;
-static CGFloat const ItemCellLeftOffset = 8.0;
-static CGFloat const ItemCellRightOffset = 8.0;
+static CGFloat const ItemCellLeftOffset = 16.0;
+static CGFloat const ItemCellRightOffset = 16.0;
 static CGFloat const ItemCellBettweenElementsOffset = 8.0;
 static CGFloat const ItemCellImageViewWidth = 44.0;
-static CGFloat const ItemCellButtonWidth = 30.0;
+static CGFloat const ItemCellButtonWidth = 40.0;
 
 @interface ItemCell ()
 
@@ -42,7 +42,7 @@ static CGFloat const ItemCellButtonWidth = 30.0;
 	{
 		_itemDescriptionLabel = [UILabel new];
 		_itemDescriptionLabel.numberOfLines = 0;
-		_itemDescriptionLabel.font = FontThin(14);
+		_itemDescriptionLabel.font = FontMedium(14);
 		[self.contentView addSubview:_itemDescriptionLabel];
 
 		_itemImageView = [UIImageView new];
@@ -68,7 +68,12 @@ static CGFloat const ItemCellButtonWidth = 30.0;
 		[self.contentView addSubview:_discountLabel];
 
 		_addToCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		_addToCartButton.imageView.image = [UIImage imageNamed:@"cart"];
+		if (self.inCart) {
+			[_addToCartButton setImage:[UIImage imageNamed:@"removeToCart"] forState:UIControlStateNormal];
+		} else {
+			[_addToCartButton setImage:[UIImage imageNamed:@"addToCart"] forState:UIControlStateNormal];
+		}
+
 		[_addToCartButton addTarget:self action:@selector(addToCart) forControlEvents:UIControlEventTouchUpInside];
 		[self.contentView addSubview:_addToCartButton];
 	}
@@ -95,7 +100,7 @@ static CGFloat const ItemCellButtonWidth = 30.0;
 
 		[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 			make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
-			make.right.equalTo(self.contentView).offset(ItemCellRightOffset);
+			make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
 			make.width.and.height.equalTo(@(ItemCellImageViewWidth));
 		}];
 	}
@@ -122,13 +127,13 @@ static CGFloat const ItemCellButtonWidth = 30.0;
 
 	[self.discountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
-		make.right.equalTo(self.addToCartButton).offset(ItemCellBettweenElementsOffset);
+		make.right.equalTo(self.addToCartButton).offset(-ItemCellBettweenElementsOffset);
 		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
 	}];
 
 	[self.addToCartButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-		make.right.equalTo(self).offset(ItemCellRightOffset);
-		make.bottom.equalTo(self).offset(ItemCellTopOffset);
+		make.right.equalTo(self).offset(-ItemCellRightOffset);
+		make.bottom.equalTo(self).offset(-ItemCellTopOffset);
 		make.width.and.height.equalTo(@(ItemCellButtonWidth));
 	}];
 

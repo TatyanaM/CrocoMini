@@ -32,6 +32,7 @@
 	cell.priceLabel.text = [NSString stringWithFormat:@"Цена: %.2f", item.price];
 	cell.discountLabel.text = [NSString stringWithFormat:@"Скидка: %.2f", item.discount];
 	cell.itemImageView.image = [UIImage new];
+	cell.inCart = item.inCart;
 	[cell setNeedsUpdateConstraints];
 }
 

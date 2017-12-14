@@ -69,7 +69,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return UITableViewAutomaticDimension;
+	return 100;
 }
 
 #pragma mark - UI

@@ -39,6 +39,8 @@
 			if ([item respondsToSelector:NSSelectorFromString(keyValue)]) {
 				[item setValue:info[key] forKey:keyValue];
 			}
+
+			item.inCart = @NO;
 		}
 		[parsedItems addObject:item];
 	}

@@ -20,5 +20,6 @@
 @dynamic itemDescription;
 @dynamic price;
 @dynamic retailer;
+@dynamic inCart;
 
 @end

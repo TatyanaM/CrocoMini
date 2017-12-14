@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *itemDescription;
 @property (nonatomic) double price;
 @property (nullable, nonatomic, copy) NSString *retailer;
+@property (nonatomic) BOOL inCart;
 
 @end
 
