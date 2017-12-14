@@ -7,18 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ItemStoreManagerDelegate.h"
 
-/**
- Class for managing database item objects
- */
-@interface ItemStoreManager : NSObject
+typedef void (^ItemSearchCompletionHandler)(NSArray *items);
 
-/**
- Method parses JSON and creates objects of type Item
+@protocol ItemStoreManagerDelegate;
 
- @param items array of dictionary from JSON
- @return array objects of type Item
- */
-+(NSArray *)createItemsWithData:(NSArray *)items;
+
+@interface ItemStoreManager : NSObject 
+
++ (instancetype)sharedManager;
+
+
+- (NSArray *)createItemsWithData:(NSArray *)items;
+
+- (void)foundItemWithText:(NSString *)text andCompletionHandler:(ItemSearchCompletionHandler)completionHandler;
 
 @end

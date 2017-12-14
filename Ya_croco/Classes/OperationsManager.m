@@ -7,6 +7,7 @@
 //
 
 #import "OperationsManager.h"
+#import "ItemsLoadingOperation.h"
 
 @implementation OperationsManager
 
@@ -32,7 +33,20 @@
 	return self;
 }
 
-//TO-DO
-//
+- (id<LoadingOperationsDelegate>)operationWithType:(LoadingOperationType)type
+{
+	id operation = nil;
+	switch (type) {
+		case Items:
+			operation = [[ItemsLoadingOperation alloc] init];
+			break;
+
+		case Other:
+			return nil;
+			break;
+	}
+	return operation;
+}
+
 
 @end

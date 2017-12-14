@@ -8,6 +8,7 @@
 
 #import "ItemsTableViewDataSource.h"
 #import "ItemCell.h"
+#import "Item.h"
 
 @implementation ItemsTableViewDataSource
 
@@ -18,8 +19,14 @@
 	{
 		newCell = [[ItemCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ItemCellIdentifier];
 	}
-	newCell.item = [self.items objectAtIndex:indexPath.row];
-	[newCell configureCell];
+
+	Item *item = nil;
+	if (self.searchEnabled) {
+		item = [self.filteredItems objectAtIndex:indexPath.row];
+	} else {
+		item = [self.items objectAtIndex:indexPath.row];
+	}
+
 	return newCell;
 }
 
@@ -30,7 +37,11 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.items.count;
+	if (self.searchEnabled) {
+		return self.filteredItems.count;
+	} else {
+		return self.items.count;
+	}
 }
 
 @end

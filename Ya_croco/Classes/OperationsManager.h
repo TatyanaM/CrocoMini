@@ -7,6 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoadingOperationsDelegate.h"
+
+typedef enum LoadingOperationType  {
+	Items,
+	Other //something else
+} LoadingOperationType;
+
 
 @interface OperationsManager : NSObject
 
@@ -14,5 +21,6 @@
 @property (nonatomic, strong) NSOperationQueue *operationsQueue;
 
 + (instancetype)sharedManager;
+- (id<LoadingOperationsDelegate>)operationWithType:(LoadingOperationType)type;
 
 @end

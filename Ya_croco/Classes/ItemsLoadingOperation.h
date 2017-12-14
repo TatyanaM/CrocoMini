@@ -6,19 +6,11 @@
 //  Copyright © 2017 Tatiana Mudryak. All rights reserved.
 //
 
-#import "BaseOperation.h"
-
-@protocol ItemsLoadingOperationDelegate <NSObject>
-
-@required
-- (void)itemsLoadingFailedWithError:(NSString *)error;
-- (void)itemsLoadingFinishedWithResult:(NSArray *)result;
-
-@end
+#import "BaseLoadingOperation.h"
 
 
-@interface ItemsLoadingOperation : BaseOperation
+@interface ItemsLoadingOperation : BaseLoadingOperation
 
-@property (nonatomic, assign) id <ItemsLoadingOperationDelegate> delegate;
+
 
 @end

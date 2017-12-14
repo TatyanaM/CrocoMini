@@ -7,20 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ItemsLoadingOperation.h"
+#import "LoadingManagerDelegate.h"
+#import "LoadingOperationsDelegate.h"
 
 typedef void (^ItemCompletionHandler)(id items, NSError *error);
 
-@protocol LoadingManagerDelegate <NSObject>
-@required
--(void)loadingFinishedWithError:(NSString *)error;
--(void)itemsLoaded:(NSArray *)items;
+@protocol LoadingManagerDelegate;
 
-@end
 
-@interface LoadingManager : NSObject <ItemsLoadingOperationDelegate>
+@interface LoadingManager : NSObject <LoadingOperationsDelegate>
 
-@property (nonatomic, assign) id <LoadingManagerDelegate> delegate;
+@property (nonatomic, weak) id <LoadingManagerDelegate> delegate;
 
 -(void)loadItems;
 

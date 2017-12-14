@@ -7,7 +7,7 @@
 //
 //
 
-#import "Item+CoreDataClass.h"
+#import "Item.h"
 
 
 NS_ASSUME_NONNULL_BEGIN

@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Item+CoreDataClass.h"
+#import "Item.h"
 
 @interface ItemsTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray<Item *> *items;
+@property (nonatomic, strong) NSArray *filteredItems;
+@property (nonatomic) BOOL searchEnabled;
 
 @end

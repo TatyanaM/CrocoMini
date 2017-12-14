@@ -7,15 +7,13 @@
 //
 
 #import "SearchViewController.h"
-#import "ItemsLoadingOperation.h"
-#import "SearchItemManager.h"
 #import "LoadingManager.h"
-#import "ItemsSearchBar.h"
+#import "ItemStoreManager.h"
 #import "ItemsTableViewDataSource.h"
 
 static NSString *const SearchViewControllerTitle = @"Поиск";
 
-@interface SearchViewController () <LoadingManagerDelegate, SearchItemManagerDelegate>
+@interface SearchViewController () <LoadingManagerDelegate, UISearchBarDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
@@ -26,8 +24,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 @property (nonatomic, strong) LoadingManager *loadingManager;
 
 //search
-@property (nonatomic, strong) ItemsSearchBar *searchBar;
-@property (nonatomic, strong) SearchItemManager *searchManager;
+@property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSArray *filteredItems;
 
 @end
@@ -39,8 +36,6 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
     [super viewDidLoad];
 	self.title = SearchViewControllerTitle;
 
-	self.searchManager = [SearchItemManager new];
-	self.searchManager.delegate = self;
 	self.loadingManager = [LoadingManager new];
 	self.loadingManager.delegate = self;
 
@@ -48,8 +43,6 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self addTableView];
 	[self addLoadingView];
 	[self addSearchBar];
-
-	[self setupInitialData];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -74,11 +67,6 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self.loadingManager loadItems];
 }
 
-- (void)setupInitialData
-{
-	self.tableViewDataSource = [ItemsTableViewDataSource new];
-	self.tableView.dataSource = self.tableViewDataSource;
-}
 
 #pragma mark - UI
 
@@ -87,6 +75,9 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	[self.view addSubview:self.tableView];
+
+	self.tableViewDataSource = [ItemsTableViewDataSource new];
+	self.tableView.dataSource = self.tableViewDataSource;
 }
 
 - (void)addLoadingView
@@ -99,9 +90,11 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 
 - (void)addSearchBar
 {
-	self.searchBar = [[ItemsSearchBar alloc] initWithDelegate:self.searchManager];
+	self.searchBar = [[UISearchBar alloc] init];
+	self.searchBar.delegate = self;
 	[self.view addSubview:self.searchBar];
 }
+
 
 #pragma mark - LoadingManagerDelegate
 
@@ -117,12 +110,42 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	self.loadingView.hidden = YES;
 }
 
-#pragma mark - SearchItemManagerDelegate
+#pragma mark - Search delegate methods
 
--(void)searchFinishedWithResult:(NSArray *)result
+- (void)filterContentForSearchText:(NSString*)searchText
 {
-	self.tableViewDataSource.items = result;
+	[[ItemStoreManager sharedManager] foundItemWithText:searchText andCompletionHandler:^(NSArray *items) {
+		self.tableViewDataSource.filteredItems = items;
+		[self.tableView reloadData];
+	}];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+	if (searchBar.text.length == 0) {
+		self.tableViewDataSource.searchEnabled = NO;
+		[self.tableView reloadData];
+	}
+	else {
+		self.tableViewDataSource.searchEnabled = YES;
+		[self filterContentForSearchText:searchBar.text];
+	}
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
+	self.tableViewDataSource.searchEnabled = YES;
+	[self filterContentForSearchText:searchBar.text];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
+	[searchBar setText:@""];
+	self.tableViewDataSource.searchEnabled = NO;
 	[self.tableView reloadData];
+
 }
 
 #pragma mark - Constraints

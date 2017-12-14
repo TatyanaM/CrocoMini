@@ -7,26 +7,25 @@
 //
 
 #import "LoadingManager.h"
-#import "ItemsLoadingOperation.h"
+#import "BaseLoadingOperation.h"
 #import "ItemStoreManager.h"
 #import "OperationsManager.h"
 
 
 static NSString *const wrongDataFormatError = @"Ошибка загрузки данных";
 
-
 @implementation LoadingManager
 
 -(void)loadItems
 {
-	ItemsLoadingOperation *operation = [ItemsLoadingOperation new];
+	BaseLoadingOperation *operation = [[OperationsManager sharedManager] operationWithType:Items];
 	operation.delegate = self;
 	[[OperationsManager sharedManager].operationsQueue addOperation:operation];
 }
 
-#pragma mark - ItemsLoadingOperationDelegate
+#pragma mark - LoadingOperationDelegate
 
--(void)itemsLoadingFailedWithError:(NSString *)error
+-(void)loadingFailedWithError:(NSString *)error
 {
 	dispatch_async(dispatch_get_main_queue(), ^{
 		if ([self.delegate respondsToSelector:@selector(loadingFinishedWithError:)])
@@ -34,11 +33,12 @@ static NSString *const wrongDataFormatError = @"Ошибка загрузки д
 	});
 }
 
--(void)itemsLoadingFinishedWithResult:(NSArray *)result
+-(void)loadingFinishedWithResult:(NSArray *)result
 {
+	NSArray *items = [[ItemStoreManager sharedManager] createItemsWithData:result];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		if ([self.delegate respondsToSelector:@selector(itemsLoaded:)])
-			[self.delegate itemsLoaded:result];
+			[self.delegate itemsLoaded:items];
 	});
 }
 

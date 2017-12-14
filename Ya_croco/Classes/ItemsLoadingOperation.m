@@ -8,7 +8,6 @@
 
 #import "ItemsLoadingOperation.h"
 #import "NetworkAPI.h"
-#import "ItemStoreManager.h"
 
 static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 
@@ -27,13 +26,12 @@ static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 			NSArray *itemsArray = data;
 			if (itemsArray)
 			{
-				NSArray *items = [ItemStoreManager createItemsWithData:itemsArray];
-				if ([self.delegate respondsToSelector:@selector(itemsLoadingFinishedWithResult:)])
-					[self.delegate itemsLoadingFinishedWithResult:items];
+				if ([self.delegate respondsToSelector:@selector(loadingFinishedWithResult:)])
+					[self.delegate loadingFinishedWithResult:itemsArray];
 			} else
 			{
-				if ([self.delegate respondsToSelector:@selector(itemsLoadingFailedWithError:)])
-					[self.delegate itemsLoadingFailedWithError:error];
+				if ([self.delegate respondsToSelector:@selector(loadingFailedWithError:)])
+					[self.delegate loadingFailedWithError:error];
 			}
 		}
 	}

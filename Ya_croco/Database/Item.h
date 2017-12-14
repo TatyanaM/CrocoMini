@@ -1,5 +1,5 @@
 //
-//  Item+CoreDataClass.h
+//  Item.h
 //  Ya_croco
 //
 //  Created by Tatiana Mudryak on 06/12/2017.

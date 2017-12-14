@@ -1,5 +1,5 @@
 //
-//  Item+CoreDataClass.m
+//  Item.m
 //  Ya_croco
 //
 //  Created by Tatiana Mudryak on 06/12/2017.
@@ -7,7 +7,7 @@
 //
 //
 
-#import "Item+CoreDataClass.h"
+#import "Item.h"
 
 @implementation Item
 
