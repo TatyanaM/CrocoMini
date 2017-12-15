@@ -9,6 +9,8 @@
 #import "ItemsTableViewDataSource.h"
 #import "ItemCell.h"
 #import "Item.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+
 
 @implementation ItemsTableViewDataSource
 
@@ -31,7 +33,7 @@
 	cell.retailerLabel.text = [NSString stringWithFormat:@"Продавец: %@", item.retailer];
 	cell.priceLabel.text = [NSString stringWithFormat:@"Цена: %.2f", item.price];
 	cell.discountLabel.text = [NSString stringWithFormat:@"Скидка: %.2f", item.discount];
-	cell.itemImageView.image = [UIImage new];
+	[cell.itemImageView setImageWithURL:[NSURL URLWithString:item.image] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
 	cell.inCart = item.inCart;
 	[cell setNeedsUpdateConstraints];
 }

@@ -9,9 +9,9 @@
 #import "ItemCell.h"
 
 static CGFloat const ItemCellTopOffset = 8.0;
-static CGFloat const ItemCellLeftOffset = 16.0;
-static CGFloat const ItemCellRightOffset = 16.0;
-static CGFloat const ItemCellBettweenElementsOffset = 8.0;
+static CGFloat const ItemCellLeftOffset = 20.0;
+static CGFloat const ItemCellRightOffset = 20.0;
+static CGFloat const ItemCellBettweenElementsOffset = 12.0;
 static CGFloat const ItemCellImageViewWidth = 44.0;
 static CGFloat const ItemCellButtonWidth = 40.0;
 
@@ -47,7 +47,7 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 
 		_itemImageView = [UIImageView new];
 		_itemImageView.contentMode = UIViewContentModeScaleAspectFill;
-		_itemImageView.backgroundColor = [UIColor blueColor];
+		_itemImageView.clipsToBounds = YES;
 		[self.contentView addSubview:_itemImageView];
 
 		_retailerLabel = [UILabel new];
@@ -92,23 +92,16 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 
 - (void)updateConstraints
 {
-	// расчитываем отступ справа в завимости от того, есть картинка или нет
-	CGFloat labelRightOffset = ItemCellRightOffset;
-	if (self.itemImageView.image) {
-
-		labelRightOffset += ItemCellImageViewWidth + ItemCellBettweenElementsOffset;
-
-		[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-			make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
-			make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
-			make.width.and.height.equalTo(@(ItemCellImageViewWidth));
-		}];
-	}
+	[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
+		make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
+		make.width.and.height.equalTo(@(ItemCellImageViewWidth));
+	}];
 
 	[self.itemDescriptionLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
-		make.right.equalTo(self.contentView).offset(-labelRightOffset);
+		make.right.equalTo(self.itemImageView.mas_left).offset(-ItemCellBettweenElementsOffset);
 		make.height.equalTo(@([self heightForLabel:self.itemDescriptionLabel]));
 	}];
 

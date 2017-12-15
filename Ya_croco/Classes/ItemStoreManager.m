@@ -42,6 +42,7 @@
 
 			item.inCart = @NO;
 		}
+			NSLog(@"%@", info);
 		[parsedItems addObject:item];
 	}
 	[ManagedObjectContext MR_saveToPersistentStoreAndWait];
