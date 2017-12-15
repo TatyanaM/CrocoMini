@@ -13,5 +13,6 @@
 #import "LoadingView.h"
 #import "Constants.h"
 #import "CrocoFont.h"
+#import "AlertViewHelper.h"
 
 #endif /* Prefix_h */

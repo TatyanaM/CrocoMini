@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Item *> *)fetchRequest;
 
 @property (nonatomic) double discount;
-@property (nullable, nonatomic, copy) NSString *image;
+@property (nullable, nonatomic, copy) NSString *imageURL;
 @property (nullable, nonatomic, copy) NSString *itemDescription;
 @property (nonatomic) double price;
 @property (nullable, nonatomic, copy) NSString *retailer;

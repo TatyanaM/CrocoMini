@@ -16,7 +16,7 @@
 }
 
 @dynamic discount;
-@dynamic image;
+@dynamic imageURL;
 @dynamic itemDescription;
 @dynamic price;
 @dynamic retailer;

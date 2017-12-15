@@ -12,6 +12,8 @@
 		091CA6321FD567AB00B789BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091CA6301FD567AB00B789BD /* LaunchScreen.storyboard */; };
 		09455C9B1FE291B800F20266 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09455C9A1FE291B800F20266 /* ItemCell.m */; };
 		09455C9E1FE2A8A700F20266 /* CrocoFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 09455C9D1FE2A8A700F20266 /* CrocoFont.m */; };
+		09455CA21FE3C96900F20266 /* PurchasesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09455CA11FE3C96900F20266 /* PurchasesDataSource.swift */; };
+		09455CA51FE3E1F000F20266 /* AlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09455CA41FE3E1F000F20266 /* AlertViewHelper.m */; };
 		0948A00E1FD924F7004AE092 /* NetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948A00D1FD924F7004AE092 /* NetworkAPI.m */; };
 		0948A0181FD9256B004AE092 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948A0171FD9256B004AE092 /* LoadingView.m */; };
 		0948A01E1FD927BA004AE092 /* ItemsLoadingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0948A01D1FD927BA004AE092 /* ItemsLoadingOperation.m */; };
@@ -53,7 +55,9 @@
 		09455C9A1FE291B800F20266 /* ItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = Views/ItemCell.m; sourceTree = "<group>"; };
 		09455C9C1FE2A8A700F20266 /* CrocoFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CrocoFont.h; path = Classes/CrocoFont.h; sourceTree = "<group>"; };
 		09455C9D1FE2A8A700F20266 /* CrocoFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CrocoFont.m; path = Classes/CrocoFont.m; sourceTree = "<group>"; };
-		09455CA01FE2ADAC00F20266 /* ItemCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ItemCellDelegate.h; path = Classes/ItemCellDelegate.h; sourceTree = "<group>"; };
+		09455CA11FE3C96900F20266 /* PurchasesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PurchasesDataSource.swift; path = Classes/PurchasesDataSource.swift; sourceTree = "<group>"; };
+		09455CA31FE3E1F000F20266 /* AlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertViewHelper.h; path = Classes/AlertViewHelper.h; sourceTree = "<group>"; };
+		09455CA41FE3E1F000F20266 /* AlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertViewHelper.m; path = Classes/AlertViewHelper.m; sourceTree = "<group>"; };
 		0948A00C1FD924F7004AE092 /* NetworkAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkAPI.h; path = Network/NetworkAPI.h; sourceTree = "<group>"; };
 		0948A00D1FD924F7004AE092 /* NetworkAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkAPI.m; path = Network/NetworkAPI.m; sourceTree = "<group>"; };
 		0948A00F1FD9252E004AE092 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Database/Item.m; sourceTree = "<group>"; };
@@ -171,7 +175,6 @@
 			children = (
 				0948A0161FD9256A004AE092 /* LoadingView.h */,
 				0948A0171FD9256B004AE092 /* LoadingView.m */,
-				09455CA01FE2ADAC00F20266 /* ItemCellDelegate.h */,
 				09455C991FE291B800F20266 /* ItemCell.h */,
 				09455C9A1FE291B800F20266 /* ItemCell.m */,
 			);
@@ -204,6 +207,8 @@
 		09455C9F1FE2A8B000F20266 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				09455CA31FE3E1F000F20266 /* AlertViewHelper.h */,
+				09455CA41FE3E1F000F20266 /* AlertViewHelper.m */,
 				0948A0151FD9254F004AE092 /* Constants.h */,
 				09455C9C1FE2A8A700F20266 /* CrocoFont.h */,
 				09455C9D1FE2A8A700F20266 /* CrocoFont.m */,
@@ -216,6 +221,7 @@
 			children = (
 				09ECAE3E1FD6D47300CA920A /* ItemsTableViewDataSource.h */,
 				09ECAE3F1FD6D47300CA920A /* ItemsTableViewDataSource.m */,
+				09455CA11FE3C96900F20266 /* PurchasesDataSource.swift */,
 			);
 			name = "Tableview datasource";
 			sourceTree = "<group>";
@@ -383,11 +389,13 @@
 				09F7C01A1FD81D7300982378 /* BaseLoadingOperation.m in Sources */,
 				09455C9B1FE291B800F20266 /* ItemCell.m in Sources */,
 				09F7C01C1FD81D7300982378 /* OperationsManager.m in Sources */,
+				09455CA51FE3E1F000F20266 /* AlertViewHelper.m in Sources */,
 				09F7C01D1FD81D7300982378 /* LoadingManager.m in Sources */,
 				0948A01E1FD927BA004AE092 /* ItemsLoadingOperation.m in Sources */,
 				0948A0181FD9256B004AE092 /* LoadingView.m in Sources */,
 				09455C9E1FE2A8A700F20266 /* CrocoFont.m in Sources */,
 				09F7C0201FD81D7300982378 /* ItemStoreManager.m in Sources */,
+				09455CA21FE3C96900F20266 /* PurchasesDataSource.swift in Sources */,
 				09F7C0211FD81D7300982378 /* MainViewController.m in Sources */,
 				09F7C0221FD81D7300982378 /* SearchViewController.m in Sources */,
 				09F7C0231FD81D7300982378 /* ItemsTableViewDataSource.m in Sources */,

@@ -6,10 +6,18 @@
 //  Copyright © 2017 Tatiana Mudryak. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Item.h"
 
+@protocol ItemCellDelegate <NSObject>
+
+-(void)changeStatusInCartForItem:(Item *)item;
+
+@end
+
 @interface ItemsTableViewDataSource : NSObject <UITableViewDataSource>
+
+@property (nonatomic, weak) id <ItemCellDelegate> delegate;
 
 @property (nonatomic, strong) NSArray<Item *> *items;
 @property (nonatomic, strong) NSArray *filteredItems;

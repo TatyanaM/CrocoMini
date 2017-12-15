@@ -24,7 +24,7 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 @property (nonatomic, strong, readwrite) UILabel *priceLabel;
 @property (nonatomic, strong, readwrite) UILabel *discountLabel;
 @property (nonatomic, strong, readwrite) UIImageView *itemImageView;
-@property (nonatomic, strong) UIButton *addToCartButton;
+
 
 @end
 
@@ -74,17 +74,9 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 			[_addToCartButton setImage:[UIImage imageNamed:@"addToCart"] forState:UIControlStateNormal];
 		}
 
-		[_addToCartButton addTarget:self action:@selector(addToCart) forControlEvents:UIControlEventTouchUpInside];
 		[self.contentView addSubview:_addToCartButton];
 	}
 	return self;
-}
-
-- (void)addToCart
-{
-	if ([self.delegate respondsToSelector:@selector(addItemToCart)]) {
-		[self.delegate addItemToCart];
-	}
 }
 
 
@@ -92,6 +84,11 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 
 - (void)updateConstraints
 {
+	[self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+		make.top.and.bottom.equalTo(self);
+		make.right.and.left.equalTo(self);
+	}];
+
 	[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
 		make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
@@ -116,12 +113,14 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
 		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
+		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
 	}];
 
 	[self.discountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.right.equalTo(self.addToCartButton).offset(-ItemCellBettweenElementsOffset);
 		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
+		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
 	}];
 
 	[self.addToCartButton mas_remakeConstraints:^(MASConstraintMaker *make) {

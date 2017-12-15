@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ItemStoreManagerDelegate.h"
+#import "Item.h"
 
 typedef void (^ItemSearchCompletionHandler)(NSArray *items);
+typedef void (^SaveCompletionHandler)(BOOL finished);
 
 @protocol ItemStoreManagerDelegate;
 
@@ -22,5 +24,9 @@ typedef void (^ItemSearchCompletionHandler)(NSArray *items);
 - (NSArray *)createItemsWithData:(NSArray *)items;
 
 - (void)foundItemWithText:(NSString *)text andCompletionHandler:(ItemSearchCompletionHandler)completionHandler;
+
+- (void)getItemsInCartWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler;
+
+- (void)changeStatusInCartForItem:(Item *)item withCompletionHandler:(SaveCompletionHandler)completionHandler;
 
 @end

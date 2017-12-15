@@ -13,7 +13,7 @@
 
 static NSString *const SearchViewControllerTitle = @"Поиск";
 
-@interface SearchViewController () <LoadingManagerDelegate, UISearchBarDelegate, UITableViewDelegate>
+@interface SearchViewController () <LoadingManagerDelegate, ItemCellDelegate, UISearchBarDelegate, UITableViewDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
@@ -52,6 +52,8 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	// load items data
 	[self loadItems];
 
+	self.tableView.estimatedRowHeight = 160;
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	// update view constraints
 	[self.view setNeedsUpdateConstraints];
 }
@@ -79,11 +81,11 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	self.tableView.delegate = self;
-//	self.tableView.estimatedRowHeight = 160;
-//	self.tableView.rowHeight = UITableViewAutomaticDimension;
+
 	[self.view addSubview:self.tableView];
 
 	self.tableViewDataSource = [ItemsTableViewDataSource new];
+	self.tableViewDataSource.delegate = self;
 	self.tableViewDataSource.searchEnabled = NO;
 	self.tableView.dataSource = self.tableViewDataSource;
 }
@@ -104,6 +106,17 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 }
 
 
+#pragma mark - ItemCellDelegate
+
+- (void)changeStatusInCartForItem:(Item *)item
+{
+	[[ItemStoreManager sharedManager] changeStatusInCartForItem:item withCompletionHandler:^(BOOL finished) {
+		if (finished) {
+			
+		}
+	}];
+}
+
 #pragma mark - LoadingManagerDelegate
 
 -(void)itemsLoaded:(NSArray *)items
@@ -116,6 +129,9 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 -(void)loadingFinishedWithError:(NSString *)error
 {
 	self.loadingView.hidden = YES;
+	[self presentViewController:[AlertViewHelper alertWithTitle:@"Ошибка!" andMessage:error]
+					   animated:YES
+					 completion:nil];
 }
 
 

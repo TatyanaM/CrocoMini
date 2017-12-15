@@ -27,6 +27,8 @@ NSString *const PurchasesViewControllerTabBatTitle = @"Список покупо
 	//setup database
 	[MagicalRecord setupCoreDataStack];
 
+	[[UITabBar appearance] setTintColor:[UIColor greenColor]];
+
 	// main tab-bar controller
 	MainViewController *mainViewController = [MainViewController new];
 	mainViewController.view.backgroundColor = [UIColor whiteColor];

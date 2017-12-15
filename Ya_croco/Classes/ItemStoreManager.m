@@ -8,7 +8,6 @@
 
 #import "ItemStoreManager.h"
 #import <MagicalRecord/MagicalRecord.h>
-#import "Item.h"
 
 @implementation ItemStoreManager
 
@@ -27,23 +26,19 @@
 	NSMutableArray *parsedItems = [NSMutableArray new];
 	for (NSDictionary *info in items)
 	{
-		Item *item = [Item MR_createEntityInContext:ManagedObjectContext];
-
-		NSString *keyValue = nil;
-		for (NSString *key in info) {
-			keyValue = key;
-			if ([keyValue isEqualToString:@"description"]) {
-				keyValue = @"itemDescription";
-			}
-
-			if ([item respondsToSelector:NSSelectorFromString(keyValue)]) {
-				[item setValue:info[key] forKey:keyValue];
-			}
-
-			item.inCart = @NO;
+		if (info[@"description"]) {
+			NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemDescription == %@", info[@"description"]];
+			Item *item = [Item MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
+			if (!item)
+				item = [Item MR_createEntityInContext:ManagedObjectContext];
+			item.itemDescription = info[@"description"];
+			item.imageURL = info[@"image"] ? info[@"image"] : nil;
+			item.price = info[@"price"] ? [info[@"price"] doubleValue] : 0;
+			item.discount = info[@"discount"] ? [info[@"discount"] doubleValue] : 0;
+			item.retailer = info[@"retailer"] ? info[@"retailer"] : 0;
+			item.inCart = NO;
+			[parsedItems addObject:item];
 		}
-			NSLog(@"%@", info);
-		[parsedItems addObject:item];
 	}
 	[ManagedObjectContext MR_saveToPersistentStoreAndWait];
 	return [parsedItems copy];
@@ -62,6 +57,32 @@
 	}];
 }
 
+- (void)getItemsInCartWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler
+{
+	[ManagedObjectContext performBlock:^{
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"inCart == YES"];
+		NSArray *privateObjects = [self entitiesInContext:ManagedObjectContext withPredicate:predicate];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
+			NSArray *finalResults = [Item MR_findAllWithPredicate:mainPredicate];
+			completionHandler(finalResults);
+		});
+	}];
+}
+
+- (void)changeStatusInCartForItem:(Item *)item withCompletionHandler:(SaveCompletionHandler)completionHandler;
+{
+	[ManagedObjectContext MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+		Item *localItem = [item MR_inContext:localContext];
+		localItem.inCart = !localItem.inCart;
+	} completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+		completionHandler(contextDidSave);
+	}];
+}
+
+
+#pragma mark - Utils
+
 -(NSArray *)entitiesInContext:(NSManagedObjectContext *)context withPredicate:(NSPredicate *)predicate
 {
 	NSArray *privateObjects = nil;
@@ -73,5 +94,7 @@
 	NSArray *privateObjectIDs = [privateObjects valueForKey:@"objectID"];
 	return privateObjectIDs;
 }
+
+
 
 @end
