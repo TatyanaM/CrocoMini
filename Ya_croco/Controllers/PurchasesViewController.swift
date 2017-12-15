@@ -9,6 +9,8 @@
 import UIKit
 
 
+/// Контроллер отображает список продуктов в корзине
+
 class PurchasesViewController : UIViewController, ItemCellDelegate {
 
 	public let PurchasesViewControllerTitle = "Список продуктов"

@@ -21,7 +21,7 @@
 	{
 		newCell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[ItemCell reuseIdentifier]];
 	}
-
+	newCell.selectionStyle = UITableViewCellSelectionStyleNone;
 	[self configuteCell:newCell atIndexPath:indexPath];
 	return newCell;
 }

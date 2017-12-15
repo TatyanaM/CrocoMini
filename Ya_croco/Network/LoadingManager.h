@@ -14,11 +14,16 @@ typedef void (^ItemCompletionHandler)(id items, NSError *error);
 
 @protocol LoadingManagerDelegate;
 
-
+/**
+ Класс-менеджер загрузки продуктов
+ */
 @interface LoadingManager : NSObject <LoadingOperationsDelegate>
 
 @property (nonatomic, weak) id <LoadingManagerDelegate> delegate;
 
+/**
+ Загружает список продуктов
+ */
 -(void)loadItems;
 
 @end

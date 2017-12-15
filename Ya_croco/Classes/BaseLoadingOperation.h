@@ -12,7 +12,7 @@
 @protocol LoadingOperationsDelegate;
 
 /**
- Base operation class
+ Базовый класс для операций
  */
 @interface BaseLoadingOperation : NSOperation
 

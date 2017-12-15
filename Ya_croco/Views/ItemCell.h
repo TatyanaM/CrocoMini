@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Ячейка продукта
+ */
 @interface ItemCell : UITableViewCell
 
 + (NSString *)reuseIdentifier;
 
-@property (nonatomic, strong, readonly) UILabel *itemDescriptionLabel;
-@property (nonatomic, strong, readonly) UILabel *retailerLabel;
-@property (nonatomic, strong, readonly) UILabel *priceLabel;
-@property (nonatomic, strong, readonly) UILabel *discountLabel;
-@property (nonatomic, strong, readonly) UIImageView *itemImageView;
-@property (nonatomic) BOOL inCart;
-@property (nonatomic, strong) UIButton *addToCartButton;
+
+@property (nonatomic, strong, readonly) UILabel *itemDescriptionLabel;	/** Описание продукта */
+@property (nonatomic, strong, readonly) UILabel *retailerLabel; 		/** Продавец */
+@property (nonatomic, strong, readonly) UILabel *priceLabel;			/** Цена */
+@property (nonatomic, strong, readonly) UILabel *discountLabel;			/** Скидка */
+@property (nonatomic, strong, readonly) UIImageView *itemImageView;		/** Картинка продукта */
+@property (nonatomic) BOOL inCart;										/** Флаг "в корзине" */
+@property (nonatomic, strong) UIButton *addToCartButton;				/** Кнопка добавления и удаления из корзины */
 
 @end

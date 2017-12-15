@@ -15,12 +15,22 @@ typedef enum LoadingOperationType  {
 } LoadingOperationType;
 
 
+/**
+ Менеджер управления операциями
+ */
 @interface OperationsManager : NSObject
 
 // Очередь для операций
 @property (nonatomic, strong) NSOperationQueue *operationsQueue;
 
 + (instancetype)sharedManager;
+
+/**
+ Фабрика создания операций в зависимости от указанного типа
+
+ @param  type тип выполняемой операции
+ @return экземпляр операции нужного типа
+ */
 - (id<LoadingOperationsDelegate>)operationWithType:(LoadingOperationType)type;
 
 @end

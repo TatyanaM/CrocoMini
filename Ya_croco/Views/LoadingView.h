@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 
 /*
- View for display loading indicatior with text
+ Представление для индикации загрузки
  */
 @interface LoadingView : UIView
 
+/**
+ Отображает индикатор загрузки с заданным сообщением
+
+ @param message сообщение
+ @return экземпляр LoadingView
+ */
 + (instancetype)loadingViewWithMessage:(NSString *)message;
 
 

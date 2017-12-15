@@ -8,9 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Протокол менеджера загрузки
+ */
 @protocol LoadingManagerDelegate <NSObject>
 
+/**
+ Вызывается, если загрузка завершена с ошибкой
+
+ @param error описание ошибки
+ */
 -(void)loadingFinishedWithError:(NSString *)error;
+
+/**
+ Вызывается при успешно завершенной загрузке
+
+ @param items массив обьектов
+ */
 -(void)itemsLoaded:(NSArray *)items;
 
 @end

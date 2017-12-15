@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Контроллер отображает список продуктов и позволяет осуществить поиск по продуктам
+ */
 @interface SearchViewController : UIViewController
 
 @end

@@ -9,8 +9,9 @@
 #import "BaseLoadingOperation.h"
 
 
+/**
+ Операция загрузки списка продуктов
+ */
 @interface ItemsLoadingOperation : BaseLoadingOperation
-
-
 
 @end

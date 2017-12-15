@@ -84,13 +84,9 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 
 - (void)updateConstraints
 {
-	[self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-		make.top.and.bottom.equalTo(self);
-		make.right.and.left.equalTo(self);
-	}];
-
 	[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
+		make.bottom.equalTo(self.addToCartButton.mas_top).offset(ItemCellBettweenElementsOffset);
 		make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
 		make.width.and.height.equalTo(@(ItemCellImageViewWidth));
 	}];
@@ -112,15 +108,15 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 	[self.priceLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
 		make.left.equalTo(self.contentView).offset(ItemCellLeftOffset);
-		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
-		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
+		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.3);
+		make.bottom.equalTo(self.contentView).offset(-ItemCellTopOffset);
 	}];
 
 	[self.discountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.retailerLabel.mas_bottom).offset(ItemCellBettweenElementsOffset);
-		make.right.equalTo(self.addToCartButton).offset(-ItemCellBettweenElementsOffset);
-		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.5);
-		make.bottom.equalTo(self.contentView).offset(ItemCellBettweenElementsOffset);
+		make.left.equalTo(self.priceLabel.mas_right).offset(ItemCellBettweenElementsOffset);
+		make.width.equalTo(self.itemDescriptionLabel.mas_width).multipliedBy(0.3);
+		make.bottom.equalTo(self.contentView).offset(-ItemCellTopOffset);
 	}];
 
 	[self.addToCartButton mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -140,18 +136,5 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 												  context:nil].size;
 	return labelSize.height;
 }
-
-//+ (CGFloat)cellHeightWithTitle:(NSString *)title andDescription:(NSString *)description width:(CGFloat)width
-//{
-//	CGFloat descriptionTextContainerWidth = width - CNFConstantPromoLabel*2;
-//	CGSize descriptionTextContainer = CGSizeMake(descriptionTextContainerWidth, INFINITY);
-//
-//	CGFloat cellHeight = CNFConstantPromoLabel + (title.length > 0 ? CNFConstantPromoLabel : 0); // высота плюс верхний отступ
-//	cellHeight += CNFConstantPromoLabel - 8 ;
-//	cellHeight += ceil([description mySizeWithFont:SBFontMedium(15) constrainedToSize:descriptionTextContainer ].height); // высота лейбла
-//	cellHeight += 8; // нижний отступ
-//
-//	return cellHeight;
-//}
 
 @end

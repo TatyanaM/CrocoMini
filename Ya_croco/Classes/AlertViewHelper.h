@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Класс-помощник для отображения стандартного алерта с заданным заголовком и сообщением
+ */
 @interface AlertViewHelper : NSObject
 
+/**
+ Возвращает экземпляр UIAlertController с заданным заголовком и сообщением
+
+ @param title заголовок
+ @param message сообщение
+ @return экземпляр UIAlertController
+ */
 + (UIAlertController *)alertWithTitle:(NSString *)title andMessage:(NSString *)message;
 
 @end

@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Источник данных для отображения списка продуктов в корзине
+
 class PurchasesDataSource : NSObject, UITableViewDelegate {
 
 	var items = [Item]()
