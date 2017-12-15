@@ -13,7 +13,7 @@
 
 static NSString *const SearchViewControllerTitle = @"Поиск";
 
-@interface SearchViewController () <LoadingManagerDelegate, ItemCellDelegate, UISearchBarDelegate, UITableViewDelegate>
+@interface SearchViewController () <LoadingManagerDelegate, ItemCellDelegate, UISearchBarDelegate>
 
 //data
 @property (nonatomic, strong) UITableView *tableView;
@@ -43,17 +43,15 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self addTableView];
 	[self addLoadingView];
 	[self addSearchBar];
+
+	// load items data
+	[self loadItems];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 
-	// load items data
-	[self loadItems];
-
-	self.tableView.estimatedRowHeight = 160;
-	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	// update view constraints
 	[self.view setNeedsUpdateConstraints];
 }
@@ -69,10 +67,6 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self.loadingManager loadItems];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 100;
-}
 
 #pragma mark - UI
 
@@ -80,8 +74,8 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	self.tableView.delegate = self;
-
+	self.tableView.estimatedRowHeight = 160;
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	[self.view addSubview:self.tableView];
 
 	self.tableViewDataSource = [ItemsTableViewDataSource new];
@@ -105,6 +99,14 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 	[self.view addSubview:self.searchBar];
 }
 
+- (void)fetchItems
+{
+	[[ItemStoreManager sharedManager] getItemsWithCompletionHandler:^(NSArray *items) {
+		self.tableViewDataSource.items = items;
+		[self.tableView reloadData];
+	}];
+}
+
 
 #pragma mark - ItemCellDelegate
 
@@ -112,7 +114,10 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	[[ItemStoreManager sharedManager] changeStatusInCartForItem:item withCompletionHandler:^(BOOL finished) {
 		if (finished) {
-			
+			[self fetchItems];
+			[self presentViewController:[AlertViewHelper alertWithTitle:@"" andMessage:@"Товар добавлен в корзину"]
+							   animated:YES
+							 completion:nil];
 		}
 	}];
 }
@@ -122,8 +127,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 -(void)itemsLoaded:(NSArray *)items
 {
 	self.loadingView.hidden = YES;
-	self.tableViewDataSource.items = items;
-	[self.tableView reloadData];
+	[self fetchItems];
 }
 
 -(void)loadingFinishedWithError:(NSString *)error

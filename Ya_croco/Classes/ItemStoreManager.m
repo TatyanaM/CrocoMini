@@ -80,6 +80,18 @@
 	}];
 }
 
+- (void)getItemsWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler ///?????
+{
+	[ManagedObjectContext performBlock:^{
+		NSArray *privateObjects = [Item MR_findAllInContext:ManagedObjectContext];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
+			NSArray *finalResults = [Item MR_findAllWithPredicate:mainPredicate];
+			completionHandler(finalResults);
+		});
+	}];
+}
+
 
 #pragma mark - Utils
 

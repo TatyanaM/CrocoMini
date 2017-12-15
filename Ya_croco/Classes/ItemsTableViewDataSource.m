@@ -63,7 +63,7 @@
 	}
 }
 
-- (Item *)itemWithIndex:(NSInteger *)index
+- (Item *)itemWithIndex:(NSInteger)index
 {
 	return self.searchEnabled ? [self.filteredItems objectAtIndex:index] : [self.items objectAtIndex:index];
 }

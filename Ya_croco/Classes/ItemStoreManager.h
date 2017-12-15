@@ -21,6 +21,8 @@ typedef void (^SaveCompletionHandler)(BOOL finished);
 + (instancetype)sharedManager;
 
 
+- (void)getItemsWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler;
+
 - (NSArray *)createItemsWithData:(NSArray *)items;
 
 - (void)foundItemWithText:(NSString *)text andCompletionHandler:(ItemSearchCompletionHandler)completionHandler;

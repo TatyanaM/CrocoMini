@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PurchasesViewController : UIViewController, UITableViewDelegate {
+class PurchasesViewController : UIViewController, ItemCellDelegate {
 
 	public let PurchasesViewControllerTitle = "Список продуктов"
 	private var tableView : UITableView!
@@ -36,8 +36,10 @@ class PurchasesViewController : UIViewController, UITableViewDelegate {
 	func addTableView()
 	{
 		tableView = UITableView()
+		tableView.estimatedRowHeight = 160;
+		tableView.rowHeight = UITableViewAutomaticDimension;
 		tableView.dataSource = self.tableViewDataSource
-		tableView.delegate = self
+		tableViewDataSource.delegate = self
 		self.view.addSubview(tableView)
 	}
 
@@ -51,6 +53,15 @@ class PurchasesViewController : UIViewController, UITableViewDelegate {
 			self.tableViewDataSource.searchEnabled = false
 			self.tableView.reloadData()
 		}
+	}
+
+	// MARK :- ItemCellDelegate
+	func changeStatusInCart(for item: Item!) {
+		ItemStoreManager.shared().changeStatusInCart(for: item) { (finished) in
+			if finished {
+				self.getItemsInCart()
+			}
+		};
 	}
 
 	// MARK :- Constraint
