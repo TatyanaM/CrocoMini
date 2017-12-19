@@ -12,8 +12,8 @@ static CGFloat const ItemCellTopOffset = 8.0;
 static CGFloat const ItemCellLeftOffset = 20.0;
 static CGFloat const ItemCellRightOffset = 20.0;
 static CGFloat const ItemCellBettweenElementsOffset = 12.0;
-static CGFloat const ItemCellImageViewWidth = 44.0;
-static CGFloat const ItemCellButtonWidth = 40.0;
+static CGFloat const ItemCellImageViewWidth = 40.0;
+static CGFloat const ItemCellButtonWidth = 30.0;
 
 @interface ItemCell ()
 
@@ -67,18 +67,20 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 		_discountLabel.font = FontRegular(10);
 		[self.contentView addSubview:_discountLabel];
 
-		_addToCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-		if (self.inCart) {
-			[_addToCartButton setImage:[UIImage imageNamed:@"removeToCart"] forState:UIControlStateNormal];
-		} else {
-			[_addToCartButton setImage:[UIImage imageNamed:@"addToCart"] forState:UIControlStateNormal];
-		}
-
+        _addToCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		[self.contentView addSubview:_addToCartButton];
 	}
 	return self;
 }
 
+-(void)updateCell
+{
+    if (self.inCart) {
+        [_addToCartButton setImage:[UIImage imageNamed:@"removeFromCart"] forState:UIControlStateNormal];
+    } else {
+        [_addToCartButton setImage:[UIImage imageNamed:@"addToCart"] forState:UIControlStateNormal];
+    }
+}
 
 #pragma mark - Constraint
 
@@ -86,7 +88,6 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 {
 	[self.itemImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.contentView).offset(ItemCellTopOffset);
-		make.bottom.equalTo(self.addToCartButton.mas_top).offset(ItemCellBettweenElementsOffset);
 		make.right.equalTo(self.contentView).offset(-ItemCellRightOffset);
 		make.width.and.height.equalTo(@(ItemCellImageViewWidth));
 	}];
@@ -125,6 +126,12 @@ static CGFloat const ItemCellButtonWidth = 40.0;
 		make.width.and.height.equalTo(@(ItemCellButtonWidth));
 	}];
 
+    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.and.left.equalTo(self);
+        make.top.and.bottom.equalTo(self);
+        make.height.greaterThanOrEqualTo(@120);
+    }];
+    
 	[super updateConstraints];
 }
 

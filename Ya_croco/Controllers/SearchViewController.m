@@ -51,6 +51,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 -(void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[self.tableView reloadData];
 
 	// update view constraints
 	[self.view setNeedsUpdateConstraints];
@@ -74,7 +75,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.tableView = [UITableView new];
 	self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	self.tableView.estimatedRowHeight = 160;
+	self.tableView.estimatedRowHeight = 100;
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	[self.view addSubview:self.tableView];
 
@@ -96,6 +97,8 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	self.searchBar = [[UISearchBar alloc] init];
 	self.searchBar.delegate = self;
+	self.searchBar.placeholder = @"Поиск";
+	self.searchBar.showsCancelButton = YES;
 	[self.view addSubview:self.searchBar];
 }
 
@@ -114,10 +117,7 @@ static NSString *const SearchViewControllerTitle = @"Поиск";
 {
 	[[ItemStoreManager sharedManager] changeStatusInCartForItem:item withCompletionHandler:^(BOOL finished) {
 		if (finished) {
-			[self fetchItems];
-			[self presentViewController:[AlertViewHelper alertWithTitle:@"" andMessage:@"Товар добавлен в корзину"]
-							   animated:YES
-							 completion:nil];
+			[self.tableView reloadData];
 		}
 	}];
 }

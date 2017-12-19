@@ -18,7 +18,7 @@ static NSString * const itemsDefaultURL = @"http://api.edadev.ru/intern";
 -(void)main
 {
 	NSString *error = nil;
-	id data = [NetworkAPI startSyncLoadingWithURL:itemsDefaultURL params:nil error:error];
+	id data = [NetworkAPI startSyncLoadingWithURL:itemsDefaultURL params:nil];
 	if (!self.cancelled)
 	{
 		if ([data isKindOfClass:[NSArray class]])

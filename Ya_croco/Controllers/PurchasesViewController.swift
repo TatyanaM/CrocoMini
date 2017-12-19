@@ -59,11 +59,21 @@ class PurchasesViewController : UIViewController, ItemCellDelegate {
 
 	// MARK :- ItemCellDelegate
 	func changeStatusInCart(for item: Item!) {
-		ItemStoreManager.shared().changeStatusInCart(for: item) { (finished) in
-			if finished {
-				self.getItemsInCart()
-			}
-		};
+		let actionSheetController: UIAlertController = UIAlertController(title: "", message: "Удалить продукт из корзины?", preferredStyle: .alert)
+		let confirmAction: UIAlertAction = UIAlertAction(title: "Ок", style: .default) { action -> Void in
+			ItemStoreManager.shared().changeStatusInCart(for: item) { (finished) in
+				if finished {
+					self.getItemsInCart()
+				}
+			};
+		}
+		let cancelAction: UIAlertAction = UIAlertAction(title: "Отмена", style: .cancel) { action -> Void in
+		}
+		actionSheetController.addAction(confirmAction)
+		actionSheetController.addAction(cancelAction)
+		self.present(actionSheetController, animated: true, completion: nil)
+
+
 	}
 
 	// MARK :- Constraint

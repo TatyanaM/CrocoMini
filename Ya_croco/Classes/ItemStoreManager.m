@@ -29,15 +29,16 @@
 		if (info[@"description"]) {
 			NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemDescription == %@", info[@"description"]];
 			Item *item = [Item MR_findFirstWithPredicate:predicate inContext:ManagedObjectContext];
-			if (!item)
+            if (!item) {
 				item = [Item MR_createEntityInContext:ManagedObjectContext];
-			item.itemDescription = info[@"description"];
-			item.imageURL = info[@"image"] ? info[@"image"] : nil;
-			item.price = info[@"price"] ? [info[@"price"] doubleValue] : 0;
-			item.discount = info[@"discount"] ? [info[@"discount"] doubleValue] : 0;
-			item.retailer = info[@"retailer"] ? info[@"retailer"] : 0;
-			item.inCart = NO;
-			[parsedItems addObject:item];
+                item.itemDescription = info[@"description"];
+                item.imageURL = info[@"image"] ? info[@"image"] : nil;
+                item.price = info[@"price"] ? [info[@"price"] doubleValue] : 0;
+				item.discount = info[@"discount"] ? [info[@"discount"] doubleValue] : 0;
+				item.retailer = info[@"retailer"] ? info[@"retailer"] : nil;
+                item.inCart = NO;
+            }
+            [parsedItems addObject:item];
 		}
 	}
 	[ManagedObjectContext MR_saveToPersistentStoreAndWait];
@@ -47,12 +48,24 @@
 - (void)foundItemWithText:(NSString *)text andCompletionHandler:(ItemSearchCompletionHandler)completionHandler
 {
 	[ManagedObjectContext performBlock:^{
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"word CONTAINS[cd] %@", text];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"itemDescription CONTAINS[cd] %@", text];
 		NSArray *privateObjects = [self entitiesInContext:ManagedObjectContext withPredicate:predicate];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
 			NSArray *finalResults = [Item MR_findAllWithPredicate:mainPredicate];
-			completionHandler(finalResults);
+            
+            NSArray *sortedArray = [finalResults sortedArrayUsingComparator:^NSComparisonResult(id a, id b)
+            {
+                Item *aItem = (Item*)a;
+                Item *bItem = (Item*)b;
+                NSString *aString = aItem.itemDescription;
+                NSString *bString = bItem.itemDescription;
+                NSInteger aInt = [aString rangeOfString:text].location;
+                NSInteger bInt = [bString rangeOfString:text].location;
+                return aInt > bInt;
+            }];
+            
+			completionHandler(sortedArray);
 		});
 	}];
 }
@@ -60,7 +73,7 @@
 - (void)getItemsInCartWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler
 {
 	[ManagedObjectContext performBlock:^{
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"inCart == YES"];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"inCart == 1"];
 		NSArray *privateObjects = [self entitiesInContext:ManagedObjectContext withPredicate:predicate];
 		dispatch_async(dispatch_get_main_queue(), ^{
 			NSPredicate *mainPredicate = [NSPredicate predicateWithFormat:@"self IN %@", privateObjects];
@@ -74,13 +87,18 @@
 {
 	[ManagedObjectContext MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
 		Item *localItem = [item MR_inContext:localContext];
-		localItem.inCart = !localItem.inCart;
+        if (localItem.inCart == YES) {
+            localItem.inCart = NO;
+        } else {
+            localItem.inCart = YES;
+        }
+    [ManagedObjectContext MR_saveToPersistentStoreAndWait];
 	} completion:^(BOOL contextDidSave, NSError * _Nullable error) {
 		completionHandler(contextDidSave);
-	}];
+    }];
 }
 
-- (void)getItemsWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler ///?????
+- (void)getItemsWithCompletionHandler:(ItemSearchCompletionHandler)completionHandler 
 {
 	[ManagedObjectContext performBlock:^{
 		NSArray *privateObjects = [Item MR_findAllInContext:ManagedObjectContext];

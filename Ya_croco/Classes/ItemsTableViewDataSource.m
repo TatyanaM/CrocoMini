@@ -30,14 +30,21 @@
 {
 	Item *item = [self itemWithIndex:indexPath.row];
 	cell.itemDescriptionLabel.text = item.itemDescription;
-	cell.retailerLabel.text = [NSString stringWithFormat:@"Продавец: %@", item.retailer];
-	cell.priceLabel.text = [NSString stringWithFormat:@"Цена: %.2f", item.price];
-	cell.discountLabel.text = [NSString stringWithFormat:@"Скидка: %.2f", item.discount];
+	if (item.retailer) {
+		cell.retailerLabel.text = [NSString stringWithFormat:@"Продавец: %@", item.retailer];
+	}
+	if (item.price > 0) {
+		cell.priceLabel.text = [NSString stringWithFormat:@"Цена: %.2f", item.price];
+	}
+	if (item.discount > 0) {
+		cell.discountLabel.text = [NSString stringWithFormat:@"Скидка: %.2f", item.discount];
+	}
 	[cell.itemImageView setImageWithURL:[NSURL URLWithString:item.imageURL] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
 	cell.inCart = item.inCart;
 
 	cell.addToCartButton.tag = indexPath.row;
 	[cell.addToCartButton addTarget:self action:@selector(cartButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [cell updateCell];
 	[cell setNeedsUpdateConstraints];
 }
 
@@ -52,8 +59,9 @@
 		return self.filteredItems.count;
 	} else {
 		return self.items.count;
-	}
+	};
 }
+
 
 -(void)cartButtonClicked:(UIButton *)sender
 {
